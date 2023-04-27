@@ -65,7 +65,7 @@ function _omb_util_alias_select_nano {
 _omb_util_alias_delayed nano force
 
 alias ll='ls -lAFh'                         # Preferred 'ls' implementation
-alias less='less -FSRXc'                    # Preferred 'less' implementation
+#alias less='less -FSRXc'                    # Preferred 'less' implementation
 alias wget='wget -c'                        # Preferred 'wget' implementation (resume download)
 alias c='clear'                             # c:            Clear terminal display
 alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
@@ -83,7 +83,7 @@ alias src='source ~/.bashrc'                # src:          Reload .bashrc file
 #   -----------------------------
 
 alias rm='rm --interactive'
-alias less='less -SRXc'
+alias less='less -Rc'
 
 #   -----------------------------
 #   3.  EXTRA

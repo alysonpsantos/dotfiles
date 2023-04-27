@@ -14,9 +14,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
 #OSH_THEME="duru"
-#OSH_THEME="robbyrussell"
+OSH_THEME="robbyrussell"
 #OSH_THEME="rainbowbrite"
-OSH_THEME="simple"            #<---
+#OSH_THEME="simple"            #<---
 #OSH_THEME="font"
 #OSH_THEME="vscode"
 #
@@ -102,6 +102,15 @@ aliases=(
 )
 
 
+# Zoxide must be installed and set up to use the plugin 
+export _ZO_ECHO='0'
+#export _ZO_DATA_DIR=
+#export _ZO_EXCLUDE_DIRS=''
+#export _ZO_FZF_OPTS=''
+#export _ZO_MAXAGE=''
+#export _ZO_RESOLVE_SYMLINKS=''
+eval "$(zoxide init bash)"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-bash/plugins/*)
 # Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -112,9 +121,6 @@ plugins=(
   zoxide
 )
 
-# Zoxide must be installed and set up to use the plugin 
-export _ZO_ECHO='0'
-eval "$(zoxide init bash)"
 
 # Which plugins would you like to conditionally load? (plugins can be found in ~/.oh-my-bash/plugins/*)
 # Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
@@ -157,4 +163,6 @@ export EDITOR='vim'
 # As encouraged, all custom aliases within the OSH_CUSTOM folder
 
 # junegunn/fzf
+#export FZF_DEFAULT_COMMAND=''
+#export FZF_DEFAULT_OPTS=''
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

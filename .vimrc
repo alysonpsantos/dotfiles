@@ -120,6 +120,8 @@ au Filetype python nnoremap <F5> :w <CR>:!clear<CR>:!python3 % <CR>
 " -----
 call plug#begin()
 
+Plug 'nanotee/zoxide.vim'
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 	nnoremap <C-p> :Files<CR>
@@ -133,8 +135,6 @@ Plug 'preservim/vimux'
     "map <Leader>vz :call VimuxZoomRunner()<CR>
     "map <Leader>v<C-l> :VimuxClearTerminalScreen<CR>
 
-Plug 'nanotee/zoxide.vim'
-
 Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Left-Mapping} :<C-U>TmuxNavigateLeft<cr>
     noremap <silent> {Down-Mapping} :<C-U>TmuxNavigateDown<cr>
@@ -144,21 +144,35 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'lervag/vimtex'
     " syntax enable
-    " <localleader>ll compile
-    " <localleader>li info
-    " <localleader>le errors
     let g:tex_flavor = 'latexmk'
     let g:vimtex_view_method = 'zathura'
     let g:vimtex_view_automatic = 1
     let g:vimtex_quickfix_mode = 0
-    " making some things invisible when cursor not in line
-    set conceallevel=1
+    " set conceallevel=1
     let g:tex_conceal = 'abdmg'
 
 Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger       = '<Tab>'
     let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+
+Plug 'vimpostor/vim-tpipeline'
+    let g:tpipeline_autoembed = 0
+    " tpipeline comes bundled with its own custom minimal statusline
+    " let g:tpipeline_statusline = '%!tpipeline#stl#line()'
+    " " You can also use standard statusline syntax, see :help stl
+    " let g:tpipeline_statusline = '%f'
+
+"Plug 'vim-airline/vim-airline'
+"
+"Plug 'bling/vim-bufferline'
+"    let g:bufferline_echo = 1
+"    let g:bufferline_show_bufnr = 1
+"    let g:bufferline_active_buffer_left = '['
+"    let g:bufferline_active_buffer_right = ']'
+"    let g:bufferline_inactive_highlight = 'SatusLineNC'
+"    let g:bufferline_active_highlight = 'SatusLine'
+"    let g:bufferline_solo_highlight = 0
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 
