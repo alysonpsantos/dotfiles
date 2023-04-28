@@ -14,9 +14,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
 #OSH_THEME="duru"
-OSH_THEME="robbyrussell"
 #OSH_THEME="rainbowbrite"
-#OSH_THEME="simple"            #<---
+OSH_THEME="simple"            #<---
 #OSH_THEME="font"
 #OSH_THEME="vscode"
 #
@@ -116,8 +115,6 @@ eval "$(zoxide init bash)"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  bashmarks
   zoxide
 )
 
