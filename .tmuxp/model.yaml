@@ -1,0 +1,61 @@
+session_name: latex
+windows:
+- layout: a4ef,156x43,0,0{40x43,0,0,1,115x43,41,0,2}
+  options: {}
+  panes:
+  - bash
+  - focus: 'true'
+    shell_command: bash
+  start_directory: /home/businessman/journal
+  window_name: journal
+- layout: fbc3,156x43,0,0{78x43,0,0[78x21,0,0,3,78x10,0,22,4,78x10,0,33,5],77x43,79,0,6}
+  options: {}
+  panes:
+  - shell_command:
+    - cd /home/businessman
+    - bash
+  - shell_command:
+    - cd /home/businessman/.oh-my-bash
+    - bash
+  - shell_command:
+    - cd /home/businessman/.oh-my-bash/custom
+    - bash
+  - focus: 'true'
+    shell_command:
+    - cd /home/businessman
+    - bash
+  window_name: dotfiles
+- layout: 353c,156x43,0,0[156x21,0,0{78x21,0,0,7,77x21,79,0,8},156x21,0,22{78x21,0,22,9,77x21,79,22,10}]
+  options: {}
+  panes:
+  - shell_command:
+    - cd /home/businessman/.vim/UltiSnips
+    - bash
+  - shell_command:
+    - cd /home/businessman/.vim/UltiSnips
+    - bash
+  - focus: 'true'
+    shell_command:
+    - cd /home/businessman/vim-snippets/UltiSnips
+    - bash
+  - shell_command:
+    - cd /home/businessman/vim-snippets/UltiSnips
+    - bash
+  window_name: snippets
+- focus: 'true'
+  layout: bde1,156x43,0,0{78x43,0,0,16,77x43,79,0,17}
+  options: {}
+  panes:
+  - bash
+  - focus: 'true'
+    shell_command: python3
+  start_directory: /home/businessman/tikz
+  window_name: latex
+- layout: 7de2,156x43,0,0{78x43,0,0,18,77x43,79,0,20}
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: lynx
+  - bash
+  start_directory: /home/businessman/tikz
+  window_name: lynx

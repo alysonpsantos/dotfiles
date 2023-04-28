@@ -1,0 +1,11 @@
+session_name: graduation
+windows:
+- focus: 'true'
+  layout: 56ab,156x43,0,0{50x43,0,0[50x21,0,0,0,50x21,0,22,3],105x43,51,0,2}
+  options: {}
+  panes:
+  - clear; tree -L 1
+  - blank
+  - focus: 'true'
+  start_directory: /home/businessman/ee-graduation
+  window_name: main

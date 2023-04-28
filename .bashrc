@@ -85,7 +85,6 @@ OMB_PROMPT_SHOW_PYTHON_VENV=true  # enable
 # Example format: completions=(ssh git bundler gem pip pip3)
 # Add wisely, as too many completions slow down shell startup.
 completions=(
-  git
   composer
   ssh
 )

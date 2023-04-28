@@ -1,0 +1,43 @@
+session_name: ee-model
+windows:
+- focus: 'true'
+  layout: 3626,156x43,0,0[156x33,0,0,3,156x9,0,34,12]
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: python3
+  - python3
+  start_directory: /home/businessman/ee-graduation
+  window_name: main
+- layout: 63c3,156x43,0,0[156x21,0,0{78x21,0,0,4,77x21,79,0,8},156x21,0,22{78x21,0,22,6,77x21,79,22,7}]
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command:
+    - cd /home/businessman/.vim/UltiSnips
+    - bash
+  - shell_command:
+    - cd /home/businessman/.vim/UltiSnips
+    - bash
+  - shell_command:
+    - cd /home/businessman/vim-snippets/UltiSnips
+    - bash
+  - shell_command:
+    - cd /home/businessman/vim-snippets/UltiSnips
+    - bash
+  window_name: snippets
+- layout: a0ef,156x43,0,0{78x43,0,0,9,77x43,79,0,10}
+  options: {}
+  panes:
+  - bash
+  - focus: 'true'
+    shell_command: bash
+  start_directory: /home/businessman/tikz
+  window_name: latex
+- layout: 5d92,156x43,0,0,13
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: lynx
+  start_directory: /home/businessman
+  window_name: lynx
