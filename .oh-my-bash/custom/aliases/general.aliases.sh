@@ -84,6 +84,7 @@ alias src='source ~/.bashrc'                # src:          Reload .bashrc file
 
 alias rm='rm --interactive'
 alias less='less -Rc'
+alias tree='tree -C' #force color
 
 #   -----------------------------
 #   3.  EXTRA
