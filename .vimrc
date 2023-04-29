@@ -10,8 +10,9 @@ set encoding=utf-8
 " remove annoying bell sounds
 set belloff=all
 
-" no backup
+" Some servers have issues with backup files
 set nobackup
+set nowritebackup
 
 " autosave
 set autowrite
@@ -28,6 +29,9 @@ set showcmd
 " show current mode
 set showmode
 
+" termguicolors
+set termguicolors
+
 " syntax highlighting
 syntax enable
 
@@ -36,11 +40,15 @@ filetype on
 filetype indent on
 filetype plugin on
 
-" tab
+" sane editing
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set viminfo='25,\"50,n~/.viminfo
+autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 "searching
 set hlsearch
@@ -48,6 +56,23 @@ set incsearch
 set ignorecase
 set smartcase
 
+"Shows an exhaustive list during tab completion
+set wildmode=longest,list,full
+set wildmenu
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=**/.git/*
+
+" Cursor
+" -----
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode(ELSE)
+" make the switch between insert and normal mode faster 
+set ttimeout
+set ttimeoutlen=1
+set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set ttyfast
 
 
 " Status line
@@ -61,19 +86,13 @@ set smartcase
 "  %c - display the column number
 "  %p%% - show the cursor from the top of the file
 set statusline=
-set statusline+=\ %F\ %M\ filetype:%Y\ %R
+set statusline+=\ %F\ %M\ %Y\ %R
 set statusline+=%=
 set statusline+=\ %l,%c\ %p%%
+" or
+"set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+" always display the status bar
 set laststatus=2
-
-
-
-" Cursor
-" -----
-let &t_SI.="\e[5 q" "SI = INSERT mode
-let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-
 
 
 " Remappings
@@ -84,34 +103,21 @@ nnoremap 0 g0
 nnoremap $ g$
 nnoremap <Esc>u :nohls<CR>
 
+" leader and localleader
 let mapleader=" "
 let maplocalleader = ","
 
 map <leader>w :w<CR>
 map <leader>q :q<CR>
-map <leader>b :bprevious<CR>
-map <leader>n :bnext<CR>
 map <leader>sn :set number!<CR>
 map <leader>srn :set relativenumber!<CR>
 map <leader>scl :set cursorline!<CR>
 map <leader>sp :set paste!<CR>:set paste?<CR>
 
 
-
 " Python
 " -----
-
-"  filetype plugin?
-"au Filetype python set
-"    \ tabstop=4
-"    \ softtabstop=4
-"    \ shiftwidth=4
-"    \ textwidth=79
-"    \ expandtab
-"    \ autoindent
-"    \ fileformat=unix
-
-"  % indicates the current file
+au Filetype python set colorcolumn = 80
 au Filetype python nnoremap <F5> :w <CR>:!clear<CR>:!python3 % <CR>
 
 
@@ -120,28 +126,74 @@ au Filetype python nnoremap <F5> :w <CR>:!clear<CR>:!python3 % <CR>
 " -----
 call plug#begin()
 
-Plug 'nanotee/zoxide.vim'
+" bufferline
+Plug 'bling/vim-bufferline'
+    let g:bufferline_echo = 1
 
+" tabline
+Plug 'mkitt/tabline.vim'
+
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb' 
+Plug 'airblade/vim-gitgutter'
+   " Git fugitive mappings
+    noremap <leader>gl :G log<CR>
+    noremap <leader>gc :G commit<CR>
+    noremap <leader>gp :G push<CR>
+    " Equivalent to git status
+    noremap <leader>gs :G <CR>
+    "open github url on web browser
+    noremap <leader>gb :GBrowse <CR>  
+
+" fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-	nnoremap <C-p> :Files<CR>
+	nnoremap <leader>b :Buffers<CR>
+	nnoremap <leader>f :Files<CR>
+	nnoremap <leader>g :GFiles<CR>
 
-Plug 'preservim/vimux'
-    "map <Leader>vp :VimuxPromptCommand<CR>
-    "map <Leader>vl :VimuxRunLastCommand<CR>
-    "map <Leader>vi :VimuxInspectRunner<CR>
-    "map <Leader>vq :VimuxCloseRunner<CR>
-    "map <Leader>vx :VimuxInterruptRunner<CR>
-    "map <Leader>vz :call VimuxZoomRunner()<CR>
-    "map <Leader>v<C-l> :VimuxClearTerminalScreen<CR>
+" zoxide
+Plug 'nanotee/zoxide.vim'
+    " options to pass to fzf during interactive selection
+    " same options as $_ZO_FZF_OPTS
+	if exists('$_ZO_FZF_OPTS')
+		let g:zoxide_fzf_options = $_ZO_FZF_OPTS
+	endif
 
-Plug 'christoomey/vim-tmux-navigator'
-    noremap <silent> {Left-Mapping} :<C-U>TmuxNavigateLeft<cr>
-    noremap <silent> {Down-Mapping} :<C-U>TmuxNavigateDown<cr>
-    noremap <silent> {Up-Mapping} :<C-U>TmuxNavigateUp<cr>
-    noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
-    noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
+" nerdtree
+Plug 'preservim/nerdtree'
+    " Start NERDTree when Vim is started without file arguments.
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+    " thanks to miguelgrinsberg
+    nnoremap <leader>n :NERDTreeToggle<CR>
+Plug 'Xuyuanp/nerdtree-git-plugin'
+    " use this variable to change symbols
+    let g:NERDTreeGitStatusIndicatorMapCustom = {
+        \ 'Modified'  :'✹',
+        \ 'Staged'    :'✚',
+        \ 'Untracked' :'✭',
+        \ 'Renamed'   :'➜',
+        \ 'Unmerged'  :'═',
+        \ 'Deleted'   :'✖',
+        \ 'Dirty'     :'✗',
+        \ 'Ignored'   :'☒',
+        \ 'Clean'     :'✔︎',
+        \ 'Unknown'   :'?',
+        \ }
+    " nerdfonts not installed
+    let g:NERDTreeGitStatusUseNerdFonts = 0
+    " show ignored status
+    let g:NERDTreeGitStatusShowIgnored = 1 
 
+" snippets
+Plug 'sirver/ultisnips'
+    let g:UltiSnipsExpandTrigger       = '<Tab>'
+    let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
+    let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+
+" latex
 Plug 'lervag/vimtex'
     " syntax enable
     let g:tex_flavor = 'latexmk'
@@ -151,32 +203,23 @@ Plug 'lervag/vimtex'
     " set conceallevel=1
     let g:tex_conceal = 'abdmg'
 
-Plug 'sirver/ultisnips'
-    let g:UltiSnipsExpandTrigger       = '<Tab>'
-    let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+" python
+Plug 'jmcantrell/vim-virtualenv'
 
-Plug 'vimpostor/vim-tpipeline'
-    let g:tpipeline_autoembed = 0
-    " tpipeline comes bundled with its own custom minimal statusline
-    " let g:tpipeline_statusline = '%!tpipeline#stl#line()'
-    " " You can also use standard statusline syntax, see :help stl
-    " let g:tpipeline_statusline = '%f'
+" comfortable motion
+Plug 'yuttie/comfortable-motion.vim'
 
-"Plug 'vim-airline/vim-airline'
-"
-"Plug 'bling/vim-bufferline'
-"    let g:bufferline_echo = 1
-"    let g:bufferline_show_bufnr = 1
-"    let g:bufferline_active_buffer_left = '['
-"    let g:bufferline_active_buffer_right = ']'
-"    let g:bufferline_inactive_highlight = 'SatusLineNC'
-"    let g:bufferline_active_highlight = 'SatusLine'
-"    let g:bufferline_solo_highlight = 0
+" tmux
+Plug 'christoomey/vim-tmux-navigator'
+    noremap <silent> {Left-Mapping} :<C-U>TmuxNavigateLeft<cr>
+    noremap <silent> {Down-Mapping} :<C-U>TmuxNavigateDown<cr>
+    noremap <silent> {Up-Mapping} :<C-U>TmuxNavigateUp<cr>
+    noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
+    noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
 
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'nordtheme/vim'
 
 call plug#end()
 " -----
 
-colorscheme dracula
+colorscheme nord
