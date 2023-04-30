@@ -97,22 +97,29 @@ set laststatus=2
 
 " Remappings
 " -----
+
+" similar to less
+nnoremap <Esc>u :nohls<CR>
+" for wrapped lines
 nnoremap j gj
 nnoremap k gk
 nnoremap 0 g0
 nnoremap $ g$
-nnoremap <Esc>u :nohls<CR>
-
 " leader and localleader
 let mapleader=" "
 let maplocalleader = ","
-
+" save file and exit
+" no remap for q!
 map <leader>w :w<CR>
 map <leader>q :q<CR>
+" toggling
 map <leader>sn :set number!<CR>
 map <leader>srn :set relativenumber!<CR>
 map <leader>scl :set cursorline!<CR>
 map <leader>sp :set paste!<CR>:set paste?<CR>
+" buffer navigation
+map <leader>h :bprevious<CR>
+map <leader>l :bnext<CR>
 
 
 " Python
@@ -129,9 +136,8 @@ call plug#begin()
 " bufferline
 Plug 'bling/vim-bufferline'
     let g:bufferline_echo = 1
-
-" tabline
-Plug 'mkitt/tabline.vim'
+    let g:bufferline_show_bufnr = 1
+    let g:bufferline_rotate = 1
 
 " git
 Plug 'tpope/vim-fugitive'
