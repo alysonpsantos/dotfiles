@@ -1,5 +1,6 @@
 " Basic
 " -----
+
 " vim only (not vi)
 set nocompatible 
 
@@ -90,6 +91,8 @@ set laststatus=2
 " Remappings
 " -----
 
+" easier escape
+imap jk <Esc>
 " similar to less
 nnoremap <Esc>u :nohls<CR>
 " for wrapped lines
@@ -100,18 +103,16 @@ nnoremap $ g$
 " leader and localleader
 let mapleader=" "
 let maplocalleader = ","
-" save file and exit
-" no remap for q!
-map <leader>w :w<CR>
-map <leader>q :q<CR>
 " toggling
 map <leader>sn :set number!<CR>
 map <leader>srn :set relativenumber!<CR>
 map <leader>scl :set cursorline!<CR>
 map <leader>sp :set paste!<CR>:set paste?<CR>
 " buffer navigation
+map <leader>w :w<CR>
 map <leader>h :bprevious<CR>
 map <leader>l :bnext<CR>
+map <leader>q :qa<CR>
 
 
 " Python
