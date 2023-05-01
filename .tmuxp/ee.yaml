@@ -1,11 +1,18 @@
-session_name: graduation
+session_name: ee-grad
+start_directory: /home/businessman/ee-graduation
 windows:
+
 - focus: 'true'
-  layout: 56ab,156x43,0,0{50x43,0,0[50x21,0,0,0,50x21,0,22,3],105x43,51,0,2}
+- layout: bac0,156x43,0,0,3
   options: {}
   panes:
-  - clear; tree -L 1
-  - blank
   - focus: 'true'
-  start_directory: /home/businessman/ee-graduation
+    shell_command: vim
   window_name: main
+
+  layout: bac1,156x43,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: lynx
+  window_name: research

@@ -118,8 +118,8 @@ map <leader>l :bnext<CR>
 
 " Python
 " -----
-au Filetype python set colorcolumn = 80
-au Filetype python nnoremap <F5> :w <CR>:!clear<CR>:!python3 % <CR>
+"au Filetype python set colorcolumn = 80
+au Filetype python nnoremap <F5> :w<CR>:!clear<CR>:!python3 %<CR>
 
 
 
