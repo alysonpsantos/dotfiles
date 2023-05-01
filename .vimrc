@@ -110,9 +110,10 @@ map <leader>scl :set cursorline!<CR>
 map <leader>sp :set paste!<CR>:set paste?<CR>
 " buffer navigation
 map <leader>w :w<CR>
+map <leader>q :q<CR>
+map <leader>qq :qa<CR>
 map <leader>h :bprevious<CR>
 map <leader>l :bnext<CR>
-map <leader>q :qa<CR>
 
 
 " Python

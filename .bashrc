@@ -41,7 +41,8 @@ eval "$(zoxide init bash)"
 
 # junegunn/fzf
 #export FZF_DEFAULT_COMMAND=''
-#export FZF_DEFAULT_OPTS=''
+export FZF_DEFAULT_OPTS='--extended --cycle'
+export FZF_COMPLETION_OPTS='--border --info=inline'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
