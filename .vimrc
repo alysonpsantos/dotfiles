@@ -1,21 +1,16 @@
 " Basic
 " -----
-
 " vim only (not vi)
 set nocompatible 
 
-" encoding
 set encoding=utf-8
-
-" remove annoying bell sounds
 set belloff=all
+set autowrite
+set termguicolors
 
 " Some servers have issues with backup files
 set nobackup
 set nowritebackup
-
-" autosave
-set autowrite
 
 " when scrolling, do not let cursor above/below N lines
 set scrolloff=10
@@ -28,9 +23,6 @@ set showcmd
 
 " show current mode
 set showmode
-
-" termguicolors
-set termguicolors
 
 " syntax highlighting
 syntax enable
@@ -57,8 +49,8 @@ set ignorecase
 set smartcase
 
 "Shows an exhaustive list during tab completion
-set wildmode=longest,list,full
 set wildmenu
+set wildmode=longest,list,full
 " Ignore files
 set wildignore+=*.pyc
 set wildignore+=**/.git/*
@@ -132,12 +124,6 @@ au Filetype python nnoremap <F5> :w <CR>:!clear<CR>:!python3 % <CR>
 " Plugins (with vim-plugins)
 " -----
 call plug#begin()
-
-" bufferline
-Plug 'bling/vim-bufferline'
-    let g:bufferline_echo = 1
-    let g:bufferline_show_bufnr = 1
-    let g:bufferline_rotate = 1
 
 " git
 Plug 'tpope/vim-fugitive'
