@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# path
+export PATH="$HOME/.local/bin:$PATH"
+
 # history 
 shopt -s histappend histreedit histverify
 HISTCONTROL=ignoredups:ignorespace

@@ -1,0 +1,48 @@
+session_name: tikz
+windows:
+
+- layout: babd,156x43,0,0,0
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: vim
+  start_directory: /home/businessman/journal
+  window_name: journal
+
+- layout: babd,156x43,0,0,0
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: clear;echo "edit your dotfiles here"
+  start_directory: /home/businessman
+  window_name: dotfiles
+
+
+- layout: d3b0,156x43,0,0[156x21,0,0,7,156x21,0,22,9]
+  options: {}
+  panes:
+  - shell_command:
+    - cd /home/businessman/.vim/UltiSnips;clear
+  - focus: 'true'
+    shell_command:
+    - cd /home/businessman/vim-snippets/UltiSnips;clear;echo "for consulting";ls
+  window_name: snippets
+
+- focus: 'true'
+  layout: bde1,156x43,0,0{78x43,0,0,16,77x43,79,0,17}
+  options: {}
+  panes:
+  - blank
+  - focus: 'true'
+    shell_command: clear
+  start_directory: /home/businessman/tikz
+  window_name: latex
+
+- layout: 7de2,156x43,0,0{78x43,0,0,18,77x43,79,0,20}
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: lynx
+  - blank
+  start_directory: /home/businessman/tikz
+  window_name: lynx
