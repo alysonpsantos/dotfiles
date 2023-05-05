@@ -7,7 +7,7 @@ set nocompatible
 set encoding=utf-8
 set belloff=all
 set autowrite
-set termguicolors
+"set termguicolors
 
 " Some servers have issues with backup files
 set nobackup
@@ -211,9 +211,9 @@ Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
     noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
 
-Plug 'nordtheme/vim'
+"Plug 'nordtheme/vim'
+"colorscheme nord
 
 call plug#end()
 " -----
 
-colorscheme nord
