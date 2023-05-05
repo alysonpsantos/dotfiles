@@ -111,7 +111,7 @@ map <leader>sp :set paste!<CR>:set paste?<CR>
 " buffer navigation
 map <leader>w :w<CR>
 map <leader>q :q<CR>
-map <leader>qq :qa<CR>
+"map <leader>qq :qa<CR>
 map <leader>h :bprevious<CR>
 map <leader>l :bnext<CR>
 
@@ -129,16 +129,6 @@ call plug#begin()
 
 " git
 Plug 'tpope/vim-fugitive'
-"Plug 'tpope/vim-rhubarb' 
-"Plug 'airblade/vim-gitgutter'
-   " Git fugitive mappings
-    noremap <leader>gl :G log<CR>
-    noremap <leader>gc :G commit<CR>
-    noremap <leader>gp :G push<CR>
-    " Equivalent to git status
-    noremap <leader>gs :G <CR>
-    "open github url on web browser
-    noremap <leader>gb :GBrowse <CR>  
 
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -157,29 +147,6 @@ Plug 'nanotee/zoxide.vim'
 
 " nerdtree
 Plug 'preservim/nerdtree'
-    " Start NERDTree when Vim is started without file arguments.
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
-    " thanks to miguelgrinsberg
-    nnoremap <leader>n :NERDTreeToggle<CR>
-Plug 'Xuyuanp/nerdtree-git-plugin'
-    " use this variable to change symbols
-    let g:NERDTreeGitStatusIndicatorMapCustom = {
-        \ 'Modified'  :'✹',
-        \ 'Staged'    :'✚',
-        \ 'Untracked' :'✭',
-        \ 'Renamed'   :'➜',
-        \ 'Unmerged'  :'═',
-        \ 'Deleted'   :'✖',
-        \ 'Dirty'     :'✗',
-        \ 'Ignored'   :'☒',
-        \ 'Clean'     :'✔︎',
-        \ 'Unknown'   :'?',
-        \ }
-    " nerdfonts not installed
-    let g:NERDTreeGitStatusUseNerdFonts = 0
-    " show ignored status
-    let g:NERDTreeGitStatusShowIgnored = 1 
 
 " snippets
 Plug 'sirver/ultisnips'
@@ -210,9 +177,6 @@ Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Up-Mapping} :<C-U>TmuxNavigateUp<cr>
     noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
     noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
-
-"Plug 'nordtheme/vim'
-"colorscheme nord
 
 call plug#end()
 " -----

@@ -34,7 +34,7 @@ windows:
   panes:
   - focus: 'true'
     shell_command:
-    - vim
+    - clear
   - shell: /home/businessman/.local/bin/ipython3
   start_directory: /home/businessman/python-projects
   window_name: python
