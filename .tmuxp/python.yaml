@@ -33,17 +33,15 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command:
-    - clear
-  - shell: /home/businessman/.local/bin/ipython3
+    shell: /home/businessman/.local/bin/ipython3
+  - blank
   start_directory: /home/businessman/python-projects
   window_name: python
 
-- layout: 7de2,156x43,0,0{78x43,0,0,18,77x43,79,0,20}
+- layout: bac0,156x43,0,0,3
   options: {}
   panes:
   - focus: 'true'
     shell_command: lynx
-  - blank
-  start_directory: /home/businessman/tikz
+  start_directory: /home/businessman/python-projects
   window_name: lynx
