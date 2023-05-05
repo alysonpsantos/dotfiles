@@ -15,4 +15,4 @@ windows:
   panes:
   - focus: 'true'
     shell_command: lynx
-  window_name: research
+  window_name: web

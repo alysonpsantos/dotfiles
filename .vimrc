@@ -129,8 +129,8 @@ call plug#begin()
 
 " git
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb' 
-Plug 'airblade/vim-gitgutter'
+"Plug 'tpope/vim-rhubarb' 
+"Plug 'airblade/vim-gitgutter'
    " Git fugitive mappings
     noremap <leader>gl :G log<CR>
     noremap <leader>gc :G commit<CR>
