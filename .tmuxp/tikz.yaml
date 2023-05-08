@@ -5,7 +5,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;cat README.md
+    shell_command: clear
   start_directory: /home/businessman/journal/latex
   window_name: journal
 
@@ -13,7 +13,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;echo "edit your dotfiles here"
+    shell_command: clear
   start_directory: /home/businessman
   window_name: dotfiles
 
@@ -25,7 +25,7 @@ windows:
     - cd /home/businessman/.vim/UltiSnips;clear
   - focus: 'true'
     shell_command:
-    - cd /home/businessman/vim-snippets/UltiSnips;clear;echo "for consulting";ls
+    - cd /home/businessman/vim-snippets/UltiSnips;clear
   window_name: snippets
 
 - focus: 'true'

@@ -1,13 +1,11 @@
-" Basic
+
+" General
 " -----
 
-" vim only (not vi)
-set nocompatible 
-
+"set nocompatible
 set encoding=utf-8
 set belloff=all
 set autowrite
-"set termguicolors
 
 " Some servers have issues with backup files
 set nobackup
@@ -66,6 +64,7 @@ set ttimeout
 set ttimeoutlen=1
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set ttyfast
+set lazyredraw
 
 
 " Status line
@@ -108,67 +107,12 @@ map <leader>sn :set number!<CR>
 map <leader>srn :set relativenumber!<CR>
 map <leader>scl :set cursorline!<CR>
 map <leader>sp :set paste!<CR>:set paste?<CR>
-" buffer navigation
-map <leader>w :w<CR>
-map <leader>q :q<CR>
-"map <leader>qq :qa<CR>
-map <leader>h :bprevious<CR>
-map <leader>l :bnext<CR>
-
-
-" Python
-" -----
-"au Filetype python set colorcolumn = 80
-au Filetype python nnoremap <F5> :w<CR>:!clear<CR>:!python3 %<CR>
 
 
 
 " Plugins (with vim-plugins)
 " -----
 call plug#begin()
-
-" git
-Plug 'tpope/vim-fugitive'
-
-" fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-	nnoremap <leader>b :Buffers<CR>
-	nnoremap <leader>f :Files<CR>
-	nnoremap <leader>g :GFiles<CR>
-
-" zoxide
-Plug 'nanotee/zoxide.vim'
-    " options to pass to fzf during interactive selection
-    " same options as $_ZO_FZF_OPTS
-	if exists('$_ZO_FZF_OPTS')
-		let g:zoxide_fzf_options = $_ZO_FZF_OPTS
-	endif
-
-" nerdtree
-Plug 'preservim/nerdtree'
-
-" snippets
-Plug 'sirver/ultisnips'
-    let g:UltiSnipsExpandTrigger       = '<Tab>'
-    let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-
-" latex
-Plug 'lervag/vimtex'
-    " syntax enable
-    let g:tex_flavor = 'latexmk'
-    let g:vimtex_view_method = 'zathura'
-    let g:vimtex_view_automatic = 1
-    let g:vimtex_quickfix_mode = 0
-    " set conceallevel=1
-    let g:tex_conceal = 'abdmg'
-
-" python
-Plug 'jmcantrell/vim-virtualenv'
-
-" comfortable motion
-Plug 'yuttie/comfortable-motion.vim'
 
 " tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -177,6 +121,49 @@ Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Up-Mapping} :<C-U>TmuxNavigateUp<cr>
     noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
     noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
+
+" comfortable motion
+Plug 'yuttie/comfortable-motion.vim'
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+	nnoremap <leader>b :Buffers<CR>
+	nnoremap <leader>f :Files<CR>
+	nnoremap <leader>g :GFiles<CR>
+
+"" zoxide
+"Plug 'nanotee/zoxide.vim'
+    "" options to pass to fzf during interactive selection
+    "" same options as $_ZO_FZF_OPTS
+	"if exists('$_ZO_FZF_OPTS')
+		"let g:zoxide_fzf_options = $_ZO_FZF_OPTS
+	"endif
+"
+"" git
+"Plug 'tpope/vim-fugitive'
+"
+"" nerdtree
+"Plug 'preservim/nerdtree'
+"
+"" snippets
+"Plug 'sirver/ultisnips'
+    "let g:UltiSnipsExpandTrigger       = '<Tab>'
+    "let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
+    "let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+"
+"" latex
+"Plug 'lervag/vimtex'
+    "" syntax enable
+    "let g:tex_flavor = 'latexmk'
+    "let g:vimtex_view_method = 'zathura'
+    "let g:vimtex_view_automatic = 1
+    "let g:vimtex_quickfix_mode = 0
+    "" set conceallevel=1
+    "let g:tex_conceal = 'abdmg'
+"
+"" python
+"Plug 'jmcantrell/vim-virtualenv'
 
 call plug#end()
 " -----

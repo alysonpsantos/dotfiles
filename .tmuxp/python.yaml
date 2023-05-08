@@ -5,7 +5,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;cat README.md
+    shell_command: clear
   start_directory: /home/businessman/journal/python
   window_name: journal
 
@@ -13,7 +13,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;echo "edit your dotfiles here"
+    shell_command: clear
   start_directory: /home/businessman
   window_name: dotfiles
 
@@ -25,7 +25,7 @@ windows:
     - cd /home/businessman/.vim/UltiSnips;clear
   - focus: 'true'
     shell_command:
-    - cd /home/businessman/vim-snippets/UltiSnips;clear;echo "for consulting";ls
+    - cd /home/businessman/vim-snippets/UltiSnips;clear
   window_name: snippets
 
 - focus: 'true'
@@ -34,6 +34,7 @@ windows:
   panes:
   - focus: 'true'
     shell: /home/businessman/.local/bin/ipython3
+    shell_command: clear
   - blank
   start_directory: /home/businessman/python-projects
   window_name: python
