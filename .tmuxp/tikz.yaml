@@ -46,4 +46,12 @@ windows:
     shell_command: lynx
   - blank
   start_directory: /home/businessman/tikz
-  window_name: lynx
+  window_name: web
+
+- layout: babd,156x43,0,0,0
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: clear
+  start_directory: /home/businessman
+  window_name: other

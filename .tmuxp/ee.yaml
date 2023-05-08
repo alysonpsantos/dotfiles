@@ -15,4 +15,13 @@ windows:
   panes:
   - focus: 'true'
     shell_command: lynx
-  window_name: lynx
+  window_name: web
+
+- layout: bac4,156x43,0,0,7
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: newsboat
+  start_directory: /home/businessman/.config/newsboat
+  window_name: rss
+
