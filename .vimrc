@@ -23,13 +23,13 @@ set showcmd
 " show current mode
 set showmode
 
-" syntax highlighting
-syntax enable
-
 " filetype detection, plugins and indentation
 filetype on
 filetype indent on
 filetype plugin on
+
+" syntax highlighting
+syntax enable
 
 " sane editing
 set tabstop=4
@@ -137,34 +137,6 @@ Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger       = '<Tab>'
     let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-
-" latex
-Plug 'lervag/vimtex'
-    " syntax enable
-    let g:tex_flavor = 'latexmk'
-    let g:vimtex_view_method = 'zathura'
-    let g:vimtex_view_automatic = 1
-    let g:vimtex_quickfix_mode = 0
-    " set conceallevel=1
-    let g:tex_conceal = 'abdmg'
-
-" zoxide
-"Plug 'nanotee/zoxide.vim'
-    " options to pass to fzf during interactive selection
-    " same options as $_ZO_FZF_OPTS
-
-	"if exists('$_ZO_FZF_OPTS')
-		"let g:zoxide_fzf_options = $_ZO_FZF_OPTS
-	"endif
-
-" git
-"Plug 'tpope/vim-fugitive'
-
-" nerdtree
-"Plug 'preservim/nerdtree'
-
-" python
-"Plug 'jmcantrell/vim-virtualenv'
 
 call plug#end()
 " -----
