@@ -132,37 +132,38 @@ Plug 'junegunn/fzf.vim'
 	nnoremap <leader>f :Files<CR>
 	nnoremap <leader>g :GFiles<CR>
 
-"" zoxide
+" snippets
+Plug 'sirver/ultisnips'
+    let g:UltiSnipsExpandTrigger       = '<Tab>'
+    let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
+    let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+
+" latex
+Plug 'lervag/vimtex'
+    " syntax enable
+    let g:tex_flavor = 'latexmk'
+    let g:vimtex_view_method = 'zathura'
+    let g:vimtex_view_automatic = 1
+    let g:vimtex_quickfix_mode = 0
+    " set conceallevel=1
+    let g:tex_conceal = 'abdmg'
+
+" zoxide
 "Plug 'nanotee/zoxide.vim'
-    "" options to pass to fzf during interactive selection
-    "" same options as $_ZO_FZF_OPTS
+    " options to pass to fzf during interactive selection
+    " same options as $_ZO_FZF_OPTS
+
 	"if exists('$_ZO_FZF_OPTS')
 		"let g:zoxide_fzf_options = $_ZO_FZF_OPTS
 	"endif
-"
-"" git
+
+" git
 "Plug 'tpope/vim-fugitive'
-"
-"" nerdtree
+
+" nerdtree
 "Plug 'preservim/nerdtree'
-"
-"" snippets
-"Plug 'sirver/ultisnips'
-    "let g:UltiSnipsExpandTrigger       = '<Tab>'
-    "let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
-    "let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-"
-"" latex
-"Plug 'lervag/vimtex'
-    "" syntax enable
-    "let g:tex_flavor = 'latexmk'
-    "let g:vimtex_view_method = 'zathura'
-    "let g:vimtex_view_automatic = 1
-    "let g:vimtex_quickfix_mode = 0
-    "" set conceallevel=1
-    "let g:tex_conceal = 'abdmg'
-"
-"" python
+
+" python
 "Plug 'jmcantrell/vim-virtualenv'
 
 call plug#end()
