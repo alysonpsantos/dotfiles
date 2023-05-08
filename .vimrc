@@ -1,4 +1,3 @@
-
 " General
 " -----
 
@@ -14,12 +13,8 @@ set nowritebackup
 " when scrolling, do not let cursor above/below N lines
 set scrolloff=10
 
-" allow some parts to be hidden
-set conceallevel=1
-
 " show partial command
 set showcmd
-
 " show current mode
 set showmode
 
@@ -125,6 +120,9 @@ Plug 'christoomey/vim-tmux-navigator'
 " comfortable motion
 Plug 'yuttie/comfortable-motion.vim'
 
+" auto pairs
+Plug 'jiangmiao/auto-pairs'
+
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -137,6 +135,15 @@ Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger       = '<Tab>'
     let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+
+" vimtex
+Plug 'lervag/vimtex'
+    " disable some things
+    let g:vimtex_indent_enabled   = 0
+    let g:vimtex_imaps_enabled    = 0
+    let g:vimtex_complete_enabled = 0
+    let g:vimtex_syntax_enabled   = 0
+    let g:vimtex_view_method = 'zathura'
 
 call plug#end()
 " -----
