@@ -1,4 +1,4 @@
-session_name: daily
+session_name: ^
 windows:
 
 - layout: babd,156x43,0,0,0
@@ -23,7 +23,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: lynx
+    shell_command: clear;lynx
   start_directory: /home/businessman/journal/lynx
   window_name: web
 
@@ -32,7 +32,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: newsboat
+    shell_command: clear;newsboat
   start_directory: /home/businessman/.config/newsboat
   window_name: rss
 
@@ -60,6 +60,6 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;tt
+    shell_command: clear;ls -1
   start_directory: /home/businessman/journal
   window_name: journal

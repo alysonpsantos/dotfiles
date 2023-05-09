@@ -1,23 +1,21 @@
-session_name: tikz
+session_name: session
 windows:
 
 - focus: 'true'
-  layout: bde1,156x43,0,0{78x43,0,0,16,77x43,79,0,17}
+  layout: dd93,156x43,0,0,24
   options: {}
   panes:
-  - blank
   - focus: 'true'
-    shell_command: clear
-  start_directory: /home/businessman/tikz
-  window_name: main
+    shell_command: clear;ls -1
+  start_directory: /home/businessman/journal
+  window_name: journal
 
-- layout: 7de2,156x43,0,0{78x43,0,0,18,77x43,79,0,20}
+- layout: dd93,156x43,0,0,24
   options: {}
   panes:
   - focus: 'true'
-    shell_command: lynx
-  - blank
-  start_directory: /home/businessman/tikz
+    shell_command: clear;lynx
+  start_directory: /home/businessman/journal/lynx
   window_name: web
 
 - layout: 82e8,156x43,0,0[156x21,0,0{78x21,0,0,3,77x21,79,0,10},156x21,0,22,9]
@@ -32,14 +30,6 @@ windows:
     - cd /home/businessman/tests;clear
   window_name: snippets
 
-- layout: babd,156x43,0,0,0
-  options: {}
-  panes:
-  - focus: 'true'
-    shell_command: clear
-  start_directory: /home/businessman
-  window_name: dotfiles
-  
 - layout: babd,156x43,0,0,0
   options: {}
   panes:
