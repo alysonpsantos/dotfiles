@@ -1,0 +1,160 @@
+# ejmastnak/dotfiles (inspiration)
+
+# ---------------------------------------------
+
+snippet vccommands "Vector calculus commands" b
+\renewcommand{\vec}[1]{\bm{#1}}
+\newcommand{\uvec}[1]{\mathop{} \!\hat{\mathbf{#1}}}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\tensor}[1]{\mathsf{#1}}
+
+\renewcommand{\div}{\nabla \cdot}
+\renewcommand{\curl}{\nabla \cross}
+\renewcommand{\grad}{\nabla}
+\renewcommand{\laplacian}{\nabla^{2}}
+$0
+endsnippet
+
+# --------------------------------------------
+
+snippet figurepack "Packages for Latex figures and floats" b
+\usepackage{graphicx}
+\graphicspath{{"${1:graphicspath}"}}
+\usepackage[section]{placeins}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+$0
+endsnippet
+
+# --------------------------------------------
+
+snippet minted "Packages for minted" b
+\newcommand{\tqs}{\textquotesingle}
+\newcommand{\ttilde}{{\raise.17ex\hbox{$\scriptstyle\sim$}}}
+
+\usepackage{minted, tcolorbox, etoolbox}
+\tcbuselibrary{minted,skins}
+\BeforeBeginEnvironment{minted}{\begin{tcolorbox}}
+\AfterEndEnvironment{minted}{\end{tcolorbox}}
+\setminted[${1:language}]{tabsize=2, breaklines}
+$0
+endsnippet
+
+# ---------------------------------------------
+
+snippet bib "Bibliography" b
+% bibliography
+\usepackage{csquotes}
+\usepackage{hyperref}
+    \hypersetup{
+        colorlinks=false,
+        pdfborder={0 0 0},
+    }
+\usepackage[
+    backend=biber,
+    hyperref=true,
+    backref=true,
+]{biblatex}
+\addbibresource[glob]{./bibfiles/*.bib}
+endsnippet
+
+# ---------------------------------------------
+
+snippet lecture "Lecture note" b
+\documentclass{scrartcl}
+
+\input{preamble}
+
+\def\theme{${1: Tema da aula}}
+\def\date{${2: Data da aula}}
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
+
+# ---------------------------------------------
+
+snippet lab "Lab report" b
+\documentclass{scrartcl}
+
+\input{preamble}
+
+\title{$1}
+\author{$2}
+\date{$3}
+
+\begin{document}
+
+\maketitle
+	
+	\section{Objetivos}
+
+	\begin{itemize}
+		\item ${4:Objetivo}
+		$5
+	\end{itemize}
+
+	\section{Fundamentação Teórica}
+
+	$0
+
+	\section{Resultados}
+	\section{Questionário}
+
+	\begin{enumerate}
+		\item Questão 1
+	\end{enumerate}
+
+	%\printbibliography
+
+\end{document}
+endsnippet
+
+# ---------------------------------------------
+
+snippet preamble "Model of */lecture-note/preamble.tex" b
+% packages
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[]{graphicx}
+\graphicspath{ {./images/}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage[american, cute inductors]{circuitikz}
+\usepackage[shortlabels]{enumitem}
+
+% custom layout
+\usepackage[
+    nomarginpar,
+    a4paper,
+    width=150mm,
+    top=20mm,
+    bottom=20mm,
+]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\theme}
+\fancyhead[R]{\date}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% bibliography
+\usepackage{csquotes}
+\usepackage{hyperref}
+    \hypersetup{
+        colorlinks=false,
+        pdfborder={0 0 0},
+    }
+\usepackage[
+    backend=biber,
+    hyperref=true,
+    backref=true,
+]{biblatex}
+\addbibresource[glob]{./bibfiles/*.bib}
+endsnippet
+

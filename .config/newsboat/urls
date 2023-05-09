@@ -1,18 +1,68 @@
-https://rss.sciencedirect.com/publication/science/10406190
-https://rss.sciencedirect.com/publication/science/01681699
-https://rss.sciencedirect.com/publication/science/01420615
-https://rss.sciencedirect.com/publication/science/27731863
-https://rss.sciencedirect.com/publication/science/20965117
-https://rss.sciencedirect.com/publication/science/27729494
-https://rss.sciencedirect.com/publication/science/27730646
-https://rss.sciencedirect.com/publication/science/26659174
-https://rss.sciencedirect.com/publication/science/27723704
-https://rss.sciencedirect.com/publication/science/27725030
-https://rss.sciencedirect.com/publication/science/27726711
-https://rss.sciencedirect.com/publication/science/1674862X
-https://rss.sciencedirect.com/publication/science/00457906
-https://rss.sciencedirect.com/publication/science/01416359
 
-https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=enba&type=etoc&feed=rss
+-----------------------------
+NEWSFEEDS
+-----------------------------
+https://www.linuxjournal.com/news/feed "~Linux Journal"
+https://www.networkworld.com/category/linux/index.rss "~Network World"
+https://www.computerworld.com/index.rss "~Computer World"
+http://feeds.feedburner.com/d0od "~OMG Ubuntu!"
+https://itsfoss.com/feed/ "~It's Foss"
+https://www.techrepublic.com/rssfeeds/topic/open-source/ "~Tech Republic "
+https://www.theinquirer.net/feeds/rss/tag/open-source "~The Inquirer "
+http://feeds.arstechnica.com/arstechnica/open-source "~ArsTechnica "
+https://www.linuxinsider.com/perl/syndication/rssfull.pl "~Linux Insider"
+https://hackaday.com/blog/feed/ "~Hackaday"
+https://distrowatch.com/news/dw.xml "~DistroWatch" 
+http://lxer.com/module/newswire/headlines.rss "~LXer"
+https://www.phoronix.com/rss.php "~Phoronix"
+https://www.zdnet.com/topic/linux/rss.xml "~ZDNet"
+https://linux.softpedia.com/backend.xml "~Softpedia"
+https://opensource.com/feed "~Opensource.com"
+https://betanews.com/feed/ "~Beta News"
+http://feeds.feedburner.com/fossbytes "~FossBytes"
+https://www.gamingonlinux.com/article_rss.php "~Gaming On Linux"
 
-https://www.pnas.org/action/showFeed?type=searchTopic&taxonomyCode=topic&tagCode=eng
+-----------------------------
+REDDIT
+-----------------------------
+https://www.reddit.com/r/linux.rss "~r/linux"
+https://www.reddit.com/r/commandline.rss "~r/commandline"
+https://www.reddit.com/r/linux4noobs.rss "~r/linux4noobs"
+https://www.reddit.com/r/linuxquestions.rss "~r/linuxquestions"
+https://www.reddit.com/r/linuxmasterrace.rss "~r/linuxmasterrace"
+https://www.reddit.com/r/linux_gaming.rss "~r/linux_gaming"
+https://www.reddit.com/r/linuxaudio.rss "~r/linuxaudio"
+https://www.reddit.com/r/ubuntu.rss "~r/ubuntu"
+https://www.reddit.com/r/archlinux.rss "~r/archlinux"
+https://www.reddit.com/r/vim.rss "~r/vim"
+https://www.reddit.com/r/unixporn.rss "~r/unixporn"
+
+-----------------------------
+GIT
+-----------------------------
+https://gitlab.com/dwt1.atom "dwt1 (distrotube)"
+https://github.com/LukeSmithxyz.atom "LukeSmithxyz"
+
+-----------------------------
+SOURCEFORGE
+-----------------------------
+https://sourceforge.net/mirror/tor-browser/activity/feed "~Tor Browser"
+https://sourceforge.net/p/clonezilla/activity/feed "~Clonezilla"
+https://sourceforge.net/p/mx-linux/activity/feed "MX Linux"
+https://sourceforge.net/p/antix-linux/activity/feed "~AntiX"
+
+-----------------------------
+ARCH_LINUX
+-----------------------------
+https://www.archlinux.org/feeds/packages/added/ "~Packages Added"
+https://www.archlinux.org/feeds/packages/removed/ "~Packages Removed"
+https://aur.archlinux.org/rss/ "~Packages Added (AUR)"
+https://wiki.archlinux.org/api.php?hidebots=1&urlversion=1&days=7&limit=50&action=feedrecentchanges&feedformat=rss "~Arch Wiki"
+
+-----------------------------
+YOUTUBE
+-----------------------------
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw "~Linus Tech Tips"
+

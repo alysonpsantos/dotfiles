@@ -1,0 +1,159 @@
+
+# ---------------------------------------------
+snippet book "Book" b
+@book{$1,
+    title = {$2},
+	author = {$3},
+	year = {$4},
+	edition = {$5},
+	publisher = {$6},
+	isbn = {$7},
+}
+
+$0
+endsnippet
+
+# ---------------------------------------------
+
+snippet nbr "Norma ABNT NBR" b
+@standard{nbr$1,
+    title = {ABNT NBR $1:${2:Ano} - $3},
+    shorttitle = {ABNT NBR $1:$2},
+    author = {Associação Brasileira de Normas Técnicas},
+    shortauthor = {ABNT},
+    year = {$2},
+    addendum = {${4:Primeira} edição: ${5:01.01.01}. Válida a partir de ${6:01.01.01}},
+    pagetotal = {$7},
+	keywords = {$8},
+    isbn = {${9:999-99-99-9999-9}},
+}
+
+$0
+endsnippet
+
+# ---------------------------------------------
+
+snippet nbrxx " -- CANCELADA -- Norma ABNT NBR  -- CANCELADA --" b
+@standard{nbr$1,
+    title = {ABNT NBR $1:${2:Ano} - $3},
+    shorttitle = {ABNT NBR $1:$2},
+    author = {Associação Brasileira de Normas Técnicas},
+    shortauthor = {ABNT},
+    year = {$2},
+    keywords = {cancelada},
+    addendum = {Norma cancelada. Substituída pela ABNT NBR $5},
+    addendum = {Norma cancelada sem substituição},
+}
+
+$0
+endsnippet
+
+# ---------------------------------------------
+
+snippet nbrnm "Norma ABNT NBR NM" b
+@standard{nbrnm$1,
+    title = {ABNT NBR NM $1:${2:Ano} - ${3:Título da norma}},
+    shorttitle = {ABNT NBR NM $1:$2},
+    author = {Associação Brasileira de Normas Técnicas and Associación Mercosur de Normalización},
+    shortauthor = {ABNT and AMN},
+    year = {$2},
+    addendum = {Origem: NM $1:${4:Ano}. ${5:Primeira} edição: ${6:01.01.01}. Válida a partir de ${7:01.01.01}},
+    pagetotal = {$8},
+	keywords = {$9},
+    isbn = {${10:999-99-99-9999-9}},
+}
+
+$0
+endsnippet
+
+# ---------------------------------------------
+
+snippet nbrnmiec "Norma ABNT NBR NM-IEC" b
+@standard{nbrnmiec$1,
+    title = {ABNT NBR NM-IEC $1:${2:Ano} - $3},
+    shorttitle = {ABNT NBR NM-IEC $1:$2},
+    author = {Associação Brasileira de Normas Técnicas and Associación Mercosur de Normalización and International Electrotechnical Comission},
+    shortauthor = {ABNT and AMN and IEC},
+    year = {$2},
+    addendum = {Origem: NM-IEC $1:${4:Ano}. ${5:Primeira} edição: ${6:01.01.01}. Válida a partir de ${7:01.01.01}},
+    pagetotal = {$8},
+	keywords = {$9},
+    isbn = {${10:999-99-99-9999-9}},
+}
+
+$0
+endsnippet
+
+# ---------------------------------------------
+
+snippet nbriec "Norma ABNT NBR IEC " b
+@standard{nbriec$1,
+    title = {ABNT NBR IEC $1:${2:Ano} - $3},
+    shorttitle = {ABNT NBR IEC $1:$2},
+    author = {Associação Brasileira de Normas Técnicas and International Electrotechnical Commission},
+    shortauthor = {ABNT and IEC},
+    year = {$2},
+    addendum = {Origem: IEC $1:${4:Ano}. ${5:Primeira} edição: ${6:01.01.01}. Válida a partir de ${7:01.01.01}},
+    pagetotal = {$8},
+	keywords = {$9},
+    isbn = {${10:999-99-99-9999-9}},
+}
+
+$0
+endsnippet
+
+# ---------------------------------------------
+
+snippet iec "IEC Standard" b
+@standard{iec$1,
+    title = {IEC $1:${2:Ano} - $3},
+    shorttitle = {IEC $1:$2},
+    year = {$2},
+    author = {International Electrotechnical Commission},
+    shortauthor = {IEC},
+}
+
+$0
+endsnippet
+
+
+# ---------------------------------------------
+# ---------------------------------------------
+
+
+snippet ;t "BibTeX title field" bA
+title = {$1},$0
+endsnippet
+
+snippet ;st "BibTeX title field" bA
+shorttitle = {$1},$0
+endsnippet
+
+snippet ;a "BibTeX author field" b
+author = {$1},$0
+endsnippet
+
+snippet ;sa "BibTeX shortauthor field" bA
+shortauthor = {$1},$0
+endsnippet
+
+snippet ;y "BibTeX year field" bA
+year = {$1},$0
+endsnippet
+
+snippet ;u "BibTeX URL field" bA
+url = {$1},$0
+endsnippet
+
+snippet ;pt "BibTeX pagetotal field" bA
+pagetotal = {$1},$0
+endsnippet
+
+snippet ;k "keywords" bA
+keywords = {$1},$0
+endsnippet
+
+snippet ;add "addendum" bA
+addendum = {$1},$0
+endsnippet
+
