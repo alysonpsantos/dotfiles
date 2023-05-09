@@ -1,0 +1,16 @@
+refresh-on-startup yes
+reload-threads 100
+show-read-feeds no
+show-read-articles no
+
+text-width 80
+
+bind-key h quit
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key H prev-feed
+bind-key L next-feed
+bind-key g home
+bind-key G end
+
