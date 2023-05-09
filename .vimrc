@@ -80,7 +80,8 @@ set statusline+=\ %l,%c\ %p%%
 "set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 " always display the status bar
 set laststatus=2
-
+"highlight clear StatusLine
+hi StatusLine ctermbg=black ctermfg=black
 
 " Remappings
 " -----
