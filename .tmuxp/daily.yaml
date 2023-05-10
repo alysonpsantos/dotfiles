@@ -1,15 +1,15 @@
 session_name: ^
 windows:
 
-- layout: babd,156x43,0,0,0
+- window_name: bash
   options: {}
   panes:
   - focus: 'true'
     shell_command: clear
   start_directory: /home/businessman/journal/bash
-  window_name: bash
 
-- layout: 3623,156x43,0,0[156x33,0,0,2,156x9,0,34,10]
+- layout: tiled
+  window_name: python
   options: {}
   panes:
   - focus: 'true'
@@ -17,34 +17,34 @@ windows:
     shell_command: clear
   - blank
   start_directory: /home/businessman/journal/python
-  window_name: python
 
-- layout: bac0,156x43,0,0,3
+- window_name: web
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;lynx
+    shell_command: lynx
+    enter: false
   start_directory: /home/businessman/journal/lynx
-  window_name: web
 
 - focus: 'true'
-  layout: bac0,156x43,0,0,3
-  options: {}
-  panes:
-  - focus: 'true'
-    shell_command: clear;echo "newsboat here"
-  start_directory: /home/businessman/.config/newsboat
   window_name: rss
-
-- layout: babd,156x43,0,0,0
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear
-  start_directory: /home/businessman
-  window_name: config
+    shell_command: newsboat
+    enter: false
+  start_directory: /home/businessman/.config/newsboat
 
-- layout: 82e8,156x43,0,0[156x21,0,0{78x21,0,0,3,77x21,79,0,10},156x21,0,22,9]
+- window_name: dot
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: vim .tmuxp/daily.yaml
+    enter: false
+  start_directory: /home/businessman
+
+- layout: tiled
+  window_name: snippets
   options: {}
   panes:
   - focus: 'true'
@@ -54,12 +54,11 @@ windows:
     - cd /home/businessman/vim-snippets/UltiSnips;clear
   - shell_command:
     - cd /home/businessman/tests;clear
-  window_name: snippets
 
-- layout: babd,156x43,0,0,0
+- window_name: journal
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;ls -1
+    shell_command: clear
   start_directory: /home/businessman/journal
-  window_name: journal
+  
