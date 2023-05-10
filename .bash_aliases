@@ -2,7 +2,7 @@
 alias q='exit'
 alias c='clear'
 alias h='history'
-alias cls='clear;ls'
+alias cl='clear;ls -1'
 alias src='source ~/.bashrc'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -15,8 +15,22 @@ alias root='cd /'
 # safer remove
 alias rm='rm --interactive'
 
-# newsboat
-alias nb='newsboat'
+# dotfiles (git)
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotpush='dotfiles add -u; dotfiles commit -m "Commit with dotpush alias in bash_aliases";dotfiles push'
+
+# git
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add --all'
+alias gc='git commit'
+alias gl='git log --oneline'
+alias gb='git checkout -b'
+alias gd='git diff'
+
+# git workflow
+alias readme='touch README.md'
 
 # grep
 alias grep='grep --color=auto'
@@ -26,6 +40,9 @@ alias ls='ls --color=auto'
 alias la='clear;ls -A'
 alias l='clear;ls -1'
 alias ll='ls -al --color=auto | less -R'
+
+# newsboat
+alias nb='newsboat'
 
 # tree
 alias t1='tree -C -L 1 | less -R --quit-if-one-screen'
@@ -44,16 +61,3 @@ alias tkill='tmux kill-server'
 alias tl='tmuxp load'
 alias tf='tmuxp freeze'
 
-# git
-alias gs='git status'
-alias ga='git add'
-alias gaa='git add --all'
-alias gc='git commit'
-alias gl='git log --oneline'
-alias gb='git checkout -b'
-alias gd='git diff'
-
-# dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dotpush='dotfiles add -u; dotfiles commit -m "Commit with dotpush alias in bash_aliases";dotfiles push'
