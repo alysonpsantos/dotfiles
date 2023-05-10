@@ -60,12 +60,12 @@ windows:
   - focus: 'true'
     shell_command: clear
   start_directory: /home/businessman
-  window_name: dotfiles
+  window_name: config
   
 - layout: babd,156x43,0,0,0
   options: {}
   panes:
   - focus: 'true'
     shell_command: clear
-  start_directory: /home/businessman
-  window_name: other
+  start_directory: /home/businessman/journal/latex
+  window_name: journal

@@ -36,4 +36,4 @@ windows:
   - focus: 'true'
     shell_command: clear
   start_directory: /home/businessman
-  window_name: other
+  window_name: config
