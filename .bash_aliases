@@ -2,7 +2,6 @@
 alias q='exit'
 alias c='clear'
 alias h='history'
-alias cl='clear;ls -1'
 alias src='source ~/.bashrc'
 alias ..='cd ..'
 alias ...='cd ../..'
