@@ -1,5 +1,3 @@
-" General
-" -----
 
 "set nocompatible
 set encoding=utf-8
@@ -42,12 +40,14 @@ set incsearch
 set ignorecase
 set smartcase
 
-"Shows an exhaustive list during tab completion
+" Tab completion
 set wildmenu
 set wildmode=longest,list,full
-" Ignore files
 set wildignore+=*.pyc
 set wildignore+=**/.git/*
+
+
+
 
 " Cursor
 " -----
@@ -62,7 +62,7 @@ set ttyfast
 set lazyredraw
 
 
-" Status line
+" Statusline
 " -----
 "  %f - Path to the file in the buffer, as typed or relative
 "  %F - Full path to the file in the buffer
@@ -72,37 +72,41 @@ set lazyredraw
 "  %l - display the row number
 "  %c - display the column number
 "  %p%% - show the cursor from the top of the file
-set statusline=
-set statusline+=\ %F\ %M\ %Y\ %R
-set statusline+=%=
-set statusline+=\ %l,%c\ %p%%
-" or
-"set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
-" always display the status bar
-set laststatus=2
+"set statusline=
+"set statusline=\ %F\ %M\ %Y\ %R
+"set statusline+=%=
+"set statusline+=\ %l,%c\ %p%%
+
 "highlight clear StatusLine
-hi StatusLine ctermbg=black ctermfg=black
+"hi StatusLine ctermbg=NONE ctermfg=NONE
+
+set laststatus=1
+
+
+
 
 " Remappings
 " -----
 
-" easier escape
-imap jk <Esc>
 " similar to less
 nnoremap <Esc>u :nohls<CR>
+
 " for wrapped lines
 nnoremap j gj
 nnoremap k gk
 nnoremap 0 g0
 nnoremap $ g$
+
 " leader and localleader
 let mapleader=" "
 let maplocalleader = ","
+
 " toggling
 map <leader>sn :set number!<CR>
 map <leader>srn :set relativenumber!<CR>
 map <leader>scl :set cursorline!<CR>
 map <leader>sp :set paste!<CR>:set paste?<CR>
+
 
 
 
@@ -118,11 +122,17 @@ Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
     noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
 
-" comfortable motion
-Plug 'yuttie/comfortable-motion.vim'
-
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
+
+" surround
+Plug 'tpope/vim-surround'
+
+" goyo
+Plug 'junegunn/goyo.vim'
+
+" comfortable motion
+Plug 'yuttie/comfortable-motion.vim'
 
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
