@@ -22,23 +22,10 @@ bind-key k up
 bind-key l open
 bind-key h quit
 
-
-# styling
-# -----------
-#highlight feedlist "[║│]" default default bold
-#feedlist-format "%?T?║%4i %n %8u %t (%T) &╠═════════════════════════════════════════════════════?"
-#feedlist-format "%?T?║%4i %n %8u (%T) %t &╠═════════════════════════════════════════════════════%t?"
-#feedlist-format "%?T?║%4i %n %8u (%T) %t &╠%=═0%t?"
-#feedlist-format "%?T?║%4i %n %8u (%T) %t &%==11first%=x16SECOND%=~13third?"
-
-
-
-# not implemented yet - bindings
-# -----------
-#bind-key H prev-feed
-#bind-key L next-feed
-#bind-key g home
-#bind-key G end
+bind-key H prev-feed
+bind-key L next-feed
+bind-key g home
+bind-key G end
 
 
 
