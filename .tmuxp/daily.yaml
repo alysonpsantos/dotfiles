@@ -39,7 +39,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: vim .tmuxp/daily.yaml
+    shell_command: cd .tmuxp/;vim daily.yaml
     enter: false
   start_directory: "~"
 
