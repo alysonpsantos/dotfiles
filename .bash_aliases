@@ -30,6 +30,9 @@ alias dots='dot status'
 alias dota='dot add'
 alias dotaa='dot add --all'
 alias dotc='dot commit'
+alias dotl='dot log --oneline'
+alias dotb='dot checkout -b'
+alias dotd='dot diff'
 
 # git workflow
 alias readme='touch README.md'
@@ -54,7 +57,7 @@ alias tt='tree -C | less -R --quit-if-one-screen'
 
 # tmux
 alias t='tmux'
-alias ta='tmux attach -t'
+alias ta='tmux attach'
 alias tn='tmux new -s'
 alias tls='tmux ls'
 alias tkill='tmux kill-server'
