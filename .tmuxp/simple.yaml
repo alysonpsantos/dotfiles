@@ -2,38 +2,35 @@ session_name: session
 windows:
 
 - focus: 'true'
-  layout: dd93,156x43,0,0,24
+  window_name: journal
   options: {}
   panes:
   - focus: 'true'
     shell_command: clear;ls -1
-  start_directory: /home/businessman/journal
-  window_name: journal
+  start_directory: "~/journal"
 
-- layout: dd93,156x43,0,0,24
+- window_name: web
   options: {}
   panes:
   - focus: 'true'
     shell_command: clear;lynx
-  start_directory: /home/businessman/journal/lynx
-  window_name: web
+  start_directory: "~/journal/lynx"
 
 - layout: 82e8,156x43,0,0[156x21,0,0{78x21,0,0,3,77x21,79,0,10},156x21,0,22,9]
+  window_name: snippets
   options: {}
   panes:
   - focus: 'true'
     shell_command:
-    - cd /home/businessman/.vim/UltiSnips;clear
+    - cd ~/.vim/UltiSnips;clear
   - shell_command:
-    - cd /home/businessman/vim-snippets/UltiSnips;clear
+    - cd ~/vim-snippets/UltiSnips;clear
   - shell_command:
-    - cd /home/businessman/tests;clear
-  window_name: snippets
+    - cd ~/tests;clear
 
-- layout: babd,156x43,0,0,0
+- window_name: dot
   options: {}
   panes:
   - focus: 'true'
     shell_command: clear
-  start_directory: /home/businessman
-  window_name: config
+  start_directory: "~"
