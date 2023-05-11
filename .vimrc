@@ -1,20 +1,13 @@
 
-"set nocompatible
 set encoding=utf-8
 set belloff=all
 set autowrite
-
-" Some servers have issues with backup files
 set nobackup
 set nowritebackup
-
-" when scrolling, do not let cursor above/below N lines
-set scrolloff=10
-
-" show partial command
 set showcmd
-" show current mode
 set showmode
+set autoread
+set scrolloff=10
 
 " filetype detection, plugins and indentation
 filetype on
@@ -25,10 +18,12 @@ filetype plugin on
 syntax enable
 
 " sane editing
+set textwidth=80
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set backspace=indent,eol,start
 set viminfo='25,\"50,n~/.viminfo
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -62,25 +57,17 @@ set ttyfast
 set lazyredraw
 
 
+
+
 " Statusline
 " -----
-"  %f - Path to the file in the buffer, as typed or relative
-"  %F - Full path to the file in the buffer
-"  %M - Modified flag shows if file is unsaved
-"  %Y - Type of file in the buffer
-"  %R - displays the read-only flag
-"  %l - display the row number
-"  %c - display the column number
-"  %p%% - show the cursor from the top of the file
-"set statusline=
-"set statusline=\ %F\ %M\ %Y\ %R
-"set statusline+=%=
-"set statusline+=\ %l,%c\ %p%%
+"no statusline, ruler instead
+set laststatus=0
+set ruler
+set rulerformat=%40(%=%<%f%m%r\ \
+                      \ \ \
+                      \ \ %l,%c\ \ %P%)
 
-"highlight clear StatusLine
-"hi StatusLine ctermbg=NONE ctermfg=NONE
-
-set laststatus=1
 
 
 
@@ -114,7 +101,6 @@ map <leader>sp :set paste!<CR>:set paste?<CR>
 " -----
 call plug#begin()
 
-" tmux
 Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Left-Mapping} :<C-U>TmuxNavigateLeft<cr>
     noremap <silent> {Down-Mapping} :<C-U>TmuxNavigateDown<cr>
@@ -122,32 +108,22 @@ Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
     noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
 
-" auto pairs
 Plug 'jiangmiao/auto-pairs'
-
-" surround
 Plug 'tpope/vim-surround'
-
-" goyo
 Plug 'junegunn/goyo.vim'
-
-" comfortable motion
 Plug 'yuttie/comfortable-motion.vim'
 
-" fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 	nnoremap <leader>b :Buffers<CR>
 	nnoremap <leader>f :Files<CR>
 	nnoremap <leader>g :GFiles<CR>
 
-" snippets
 Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger       = '<Tab>'
     let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
-" vimtex
 Plug 'lervag/vimtex'
     " disable some things
     let g:vimtex_indent_enabled   = 0

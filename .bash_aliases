@@ -14,11 +14,6 @@ alias root='cd /'
 # safer remove
 alias rm='rm --interactive'
 
-# dotfiles (git)
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dotpush='dotfiles add -u; dotfiles commit -m "Commit with dotpush alias in bash_aliases";dotfiles push'
-
 # git
 alias gs='git status'
 alias ga='git add'
@@ -27,6 +22,14 @@ alias gc='git commit'
 alias gl='git log --oneline'
 alias gb='git checkout -b'
 alias gd='git diff'
+
+# dotfiles (git)
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dots='dot status'
+alias dota='dot add'
+alias dotaa='dot add --all'
+alias dotc='dot commit'
 
 # git workflow
 alias readme='touch README.md'
