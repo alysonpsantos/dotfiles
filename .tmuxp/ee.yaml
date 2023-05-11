@@ -32,7 +32,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;ls -1
+    shell_command: clear
     start_directory: "~/ee-tcc"
   
 - window_name: cv 
