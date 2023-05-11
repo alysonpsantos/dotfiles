@@ -8,7 +8,7 @@ windows:
     shell_command: clear
   start_directory: "~"
 
-- layout: tiled
+- layout: even-vertical
   window_name: python
   options: {}
   panes:
@@ -43,7 +43,7 @@ windows:
     enter: false
   start_directory: "~"
 
-- layout: 82e8,156x43,0,0[156x21,0,0{78x21,0,0,3,77x21,79,0,10},156x21,0,22,9]
+- layout: even-vertical
   window_name: snippets
   options: {}
   panes:
