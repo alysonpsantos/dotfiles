@@ -39,8 +39,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: cd .tmuxp/;vim daily.yaml
-    enter: false
+    shell_command: clear;dots
   start_directory: "~"
 
 - layout: even-vertical

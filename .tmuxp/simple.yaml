@@ -33,5 +33,5 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear
+    shell_command: clear;dots
   start_directory: "~"
