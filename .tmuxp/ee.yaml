@@ -7,13 +7,13 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;ls -1
+    shell_command: clear;t1
 
 - window_name: TikZ
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;ls -1
+    shell_command: clear;gs
     start_directory: "~/tikz"
 
 - layout: even-vertical
@@ -32,12 +32,12 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear
+    shell_command: clear;gs
     start_directory: "~/ee-tcc"
   
 - window_name: cv 
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear
+    shell_command: clear;gs
     start_directory: "~/curriculum"

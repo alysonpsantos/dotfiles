@@ -58,5 +58,5 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear
+    shell_command: clear;gs
   start_directory: "~/journal"

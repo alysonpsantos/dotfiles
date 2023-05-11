@@ -1,4 +1,4 @@
-session_name: o
+session_name: simple
 windows:
 
 - focus: 'true'
@@ -6,7 +6,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;ls -1
+    shell_command: clear
   start_directory: "~/journal"
 
 - window_name: web
