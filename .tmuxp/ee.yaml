@@ -7,9 +7,9 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;t1
+    shell_command: clear;gs
 
-- window_name: TikZ
+- window_name: tikz
   options: {}
   panes:
   - focus: 'true'
@@ -17,7 +17,7 @@ windows:
     start_directory: "~/tikz"
 
 - layout: even-vertical
-  window_name: snippets
+  window_name: snip
   options: {}
   panes:
   - focus: 'true'

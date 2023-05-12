@@ -1,15 +1,16 @@
 session_name: daily
 windows:
 
-- window_name: bash
+- focus: 'true'
+  window_name: journal
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear
-  start_directory: "~"
+    shell_command: clear;gs
+  start_directory: "~/journal"
 
 - layout: even-vertical
-  window_name: python
+  window_name: cli
   options: {}
   panes:
   - focus: 'true'
@@ -26,8 +27,7 @@ windows:
     enter: false
   start_directory: "~/journal/lynx"
 
-- focus: 'true'
-  window_name: rss
+- window_name: rss
   options: {}
   panes:
   - focus: 'true'
@@ -43,7 +43,7 @@ windows:
   start_directory: "~"
 
 - layout: even-vertical
-  window_name: snippets
+  window_name: snip
   options: {}
   panes:
   - focus: 'true'
@@ -54,9 +54,3 @@ windows:
   - shell_command:
     - cd ~/tests;clear
 
-- window_name: journal
-  options: {}
-  panes:
-  - focus: 'true'
-    shell_command: clear;gs
-  start_directory: "~/journal"

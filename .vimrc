@@ -1,4 +1,5 @@
 
+" general
 set encoding=utf-8
 set belloff=all
 set autowrite
@@ -8,13 +9,9 @@ set showcmd
 set showmode
 set autoread
 set scrolloff=10
-
-" filetype detection, plugins and indentation
 filetype on
 filetype indent on
 filetype plugin on
-
-" syntax highlighting
 syntax enable
 
 " sane editing
@@ -29,26 +26,23 @@ autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
-"searching
+" search
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
-" Tab completion
+" tab
 set wildmenu
 set wildmode=longest,list,full
 set wildignore+=*.pyc
 set wildignore+=**/.git/*
 
-
-
-
-" Cursor
-" -----
+" cursor
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode(ELSE)
+
 " make the switch between insert and normal mode faster 
 set ttimeout
 set ttimeoutlen=1
@@ -56,35 +50,22 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set ttyfast
 set lazyredraw
 
-
-
-
-" Statusline
-" -----
-"no statusline, ruler instead
+" no statusline, ruler instead
 set laststatus=0
 set ruler
 set rulerformat=%40(%=%<%f%m%r\ \
                       \ \ \
                       \ \ %l,%c\ \ %P%)
 
-
-
-
-
 " Remappings
 " -----
-
-" similar to less
+"
 nnoremap <Esc>u :nohls<CR>
-
-" for wrapped lines
 nnoremap j gj
 nnoremap k gk
 nnoremap 0 g0
 nnoremap $ g$
 
-" leader and localleader
 let mapleader=" "
 let maplocalleader = ","
 
@@ -93,8 +74,6 @@ map <leader>sn :set number!<CR>
 map <leader>srn :set relativenumber!<CR>
 map <leader>scl :set cursorline!<CR>
 map <leader>sp :set paste!<CR>:set paste?<CR>
-
-
 
 
 " Plugins (with vim-plugins)
