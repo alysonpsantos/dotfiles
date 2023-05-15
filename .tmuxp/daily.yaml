@@ -19,19 +19,14 @@ windows:
   - blank
   start_directory: "~/journal/python"
 
-- window_name: web
-  options: {}
-  panes:
-  - focus: 'true'
-    shell_command: lynx
-    enter: false
-  start_directory: "~/journal/lynx"
-
-- window_name: rss
+- layout: even-vertical
+  window_name: web
   options: {}
   panes:
   - focus: 'true'
     shell_command: newsboat
+    enter: false
+  - shell_command: lynx
     enter: false
   start_directory: "~/.config/newsboat"
 
