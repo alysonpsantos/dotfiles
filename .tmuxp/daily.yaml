@@ -10,14 +10,21 @@ windows:
   start_directory: "~/journal"
 
 - layout: even-vertical
-  window_name: cli
+  window_name: bash
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: clear;dots
+  start_directory: "~"
+
+- layout: even-vertical
+  window_name: python
   options: {}
   panes:
   - focus: 'true'
     shell: /home/businessman/.local/bin/ipython3
     shell_command: clear
-  - blank
-  start_directory: "~/journal/python"
+  start_directory: "~"
 
 - layout: even-vertical
   window_name: web
@@ -29,13 +36,6 @@ windows:
   - shell_command: lynx
     enter: false
   start_directory: "~/.config/newsboat"
-
-- window_name: dot
-  options: {}
-  panes:
-  - focus: 'true'
-    shell_command: clear;dots
-  start_directory: "~"
 
 - layout: even-vertical
   window_name: snip
