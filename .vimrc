@@ -14,8 +14,35 @@ filetype indent on
 filetype plugin on
 syntax enable
 
+" pep8 for every fileformat ?
+set textwidth=0
+set colorcolumn=80
+highlight ColorColumn ctermbg=3
+" Brown, DarkYellow combines with tmux colors
+" see :help ctermbg for a list of colors that can be used in the terminal
+"            NR-16   NR-8    COLOR NAME
+"            0       0       Black
+"            1       4       DarkBlue
+"            2       2       DarkGreen
+"            3       6       DarkCyan
+"            4       1       DarkRed
+"            5       5       DarkMagenta
+"            6       3       Brown, DarkYellow
+"            7       7       LightGray, LightGrey, Gray, Grey
+"            8       0*      DarkGray, DarkGrey
+"            9       4*      Blue, LightBlue
+"            10      2*      Green, LightGreen
+"            11      6*      Cyan, LightCyan
+"            12      1*      Red, LightRed
+"            13      5*      Magenta, LightMagenta
+"            14      3*      Yellow, LightYellow
+"            15      7*      White
+"highlight ColorColumn guibg=Black
+" make it black in Graphical Vims (my vim background is dark gray) 
+" see help gui-colors for a list of suggseted color names
+" see help guibg for how to specific specific rgb / hex colors
+
 " sane editing
-set textwidth=80
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -44,11 +71,12 @@ let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode(ELSE)
 
 " make the switch between insert and normal mode faster 
+set ttyfast
 set ttimeout
 set ttimeoutlen=1
-set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
-set ttyfast
 set lazyredraw
+" don't understand it
+"set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 
 " no statusline, ruler instead
 set laststatus=0
@@ -59,7 +87,6 @@ set rulerformat=%40(%=%<%f%m%r\ \
 
 " Remappings
 " -----
-"
 nnoremap <Esc>u :nohls<CR>
 nnoremap j gj
 nnoremap k gk
@@ -80,29 +107,40 @@ map <leader>sp :set paste!<CR>:set paste?<CR>
 " -----
 call plug#begin()
 
+" all
 Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Left-Mapping} :<C-U>TmuxNavigateLeft<cr>
     noremap <silent> {Down-Mapping} :<C-U>TmuxNavigateDown<cr>
     noremap <silent> {Up-Mapping} :<C-U>TmuxNavigateUp<cr>
     noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
     noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
-
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
 Plug 'yuttie/comfortable-motion.vim'
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 	nnoremap <leader>b :Buffers<CR>
 	nnoremap <leader>f :Files<CR>
 	nnoremap <leader>g :GFiles<CR>
-
 Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger       = '<Tab>'
     let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
+" md
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
+    let g:vim_markdown_folding_disabled = 1
+    let g:vim_markdown_toc_autofit = 1
+    let g:vim_markdown_conceal = 0
+    "let g:vim_markdown_fenced_languages = ['csharp=cs']
+    "Default is ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']
+    let g:vim_markdown_frontmatter = 1
+    " Auto-write when following link
+    let g:vim_markdown_autowrite = 1
+
+" tex
 Plug 'lervag/vimtex'
     " disable some things
     let g:vimtex_indent_enabled   = 0
@@ -111,6 +149,7 @@ Plug 'lervag/vimtex'
     let g:vimtex_syntax_enabled   = 0
     let g:vimtex_view_method = 'zathura'
 
+" html, css, js
 Plug 'mattn/emmet-vim'
     let g:user_emmet_install_global = 0
     autocmd FileType html,css EmmetInstall

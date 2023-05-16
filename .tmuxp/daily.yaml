@@ -23,7 +23,6 @@ windows:
   panes:
   - focus: 'true'
     shell: /home/businessman/.local/bin/ipython3
-    shell_command: clear
   start_directory: "~"
 
 - layout: even-vertical

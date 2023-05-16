@@ -13,7 +13,7 @@ shopt -s histappend histreedit histverify
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=1000
 HISTFILESIZE=2000
-HISTIGNORE="history:ls:pwd:"
+HISTIGNORE="history:ls:pwd:clear:c:l:z"
 HISTTIMEFORMAT="%F %T "
 
 # Disable email
