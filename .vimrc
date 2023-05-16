@@ -127,6 +127,22 @@ Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger       = '<Tab>'
     let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+" FOR LATER USE
+" post install (yarn install | npm install) then load plugin only for editing supported files (assumes node and yarn|npm installed globally)
+"Plug 'prettier/vim-prettier', {
+"  \ 'do': 'yarn install --frozen-lockfile --production',
+"  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+"Plug 'dense-analysis/ale'
+"    let g:ale_fixers = {
+"         \ ‘html’: [‘prettier’],
+"         \ ‘css’: [‘stylelint’],
+"         \}
+"    let g:ale_linters = {
+"         \ ‘html’: [‘htmlhint’],
+"         \ ‘css’: [‘stylelint’],
+"         \}
+"    let g:ale_linters_explicit = 1
+"    let g:ale_fix_on_save = 1
 
 " md
 Plug 'godlygeek/tabular'
@@ -173,6 +189,7 @@ Plug 'mattn/emmet-vim'
 \    },
 \  },
 \}
+
 
 call plug#end()
 " -----
