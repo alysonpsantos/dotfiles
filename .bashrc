@@ -7,6 +7,7 @@
 
 # path
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.scripts:$PATH"
 
 # history 
 shopt -s histappend histreedit histverify
@@ -32,6 +33,14 @@ shopt -s failglob
 EDITOR=vim
 VISUAL=$EDITOR
 set editing-mode vi
+
+# environment
+# luke smith recommendations
+#export BROWSER="linkhandler"
+export TRUEBROWSER="firefox"
+export READER="zathura"
+#export BIB="$HOME/Documents/LaTeX/uni.bib"
+
 
 # ajeetdsouza/zoxide
 export _ZO_ECHO='0'

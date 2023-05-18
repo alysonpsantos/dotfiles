@@ -113,7 +113,7 @@ endsnippet
 
 # ---------------------------------------------
 
-snippet preamble "Model of */lecture-note/preamble.tex" b
+snippet packages "include packages" b
 % packages
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
@@ -122,39 +122,7 @@ snippet preamble "Model of */lecture-note/preamble.tex" b
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tikz}
-\usepackage[american, cute inductors]{circuitikz}
+\usepackage[american, cute inductors, RPvoltages]{circuitikz}
 \usepackage[shortlabels]{enumitem}
-
-% custom layout
-\usepackage[
-    nomarginpar,
-    a4paper,
-    width=150mm,
-    top=20mm,
-    bottom=20mm,
-]{geometry}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhead{}
-\fancyhead[L]{\theme}
-\fancyhead[R]{\date}
-\fancyfoot{}
-\fancyfoot[R]{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-
-% bibliography
-\usepackage{csquotes}
-\usepackage{hyperref}
-    \hypersetup{
-        colorlinks=false,
-        pdfborder={0 0 0},
-    }
-\usepackage[
-    backend=biber,
-    hyperref=true,
-    backref=true,
-]{biblatex}
-\addbibresource[glob]{./bibfiles/*.bib}
 endsnippet
 

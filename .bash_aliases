@@ -57,7 +57,7 @@ alias tt='tree -C | less -R --quit-if-one-screen'
 
 # tmux
 alias t='tmux'
-alias ta='tmux attach'
+alias ta='tmux attach -t'
 alias tn='tmux new -s'
 alias tls='tmux ls'
 alias tkill='tmux kill-server'
