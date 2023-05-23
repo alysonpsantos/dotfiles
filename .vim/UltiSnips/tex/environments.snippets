@@ -1,15 +1,6 @@
 # ejmastnak/dotfiles
 # some changes: ckunte (inspiration)
 
-snippet "(^|[^a-zA-Z\\])mm" "Inline math \( \)" rA
-`!p snip.rv = match.group(1)`\\( ${1:${VISUAL:}} \\)$0
-endsnippet
-
-snippet "(^|[^a-zA-Z\\])dmm" "Display math \[ \]" rA
-`!p snip.rv = match.group(1)`\\[ ${1:${VISUAL:}} \\]$0
-endsnippet
-
-
 # Various environments
 
 snippet beg "New environment" bA
