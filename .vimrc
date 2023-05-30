@@ -14,7 +14,8 @@ filetype indent on
 filetype plugin on
 syntax enable
 
-set textwidth=80
+set textwidth=0
+"set textwidth=80
 "set colorcolumn=80
 "highlight ColorColumn ctermbg=3
 
@@ -23,7 +24,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set backspace=indent,eol,start
+"set backspace=indent,eol,start
 set viminfo='25,\"50,n~/.viminfo
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -64,10 +65,10 @@ set rulerformat=%40(%=%<%f%m%r\ \
 " Remappings
 " -----
 nnoremap <Esc>u :nohls<CR>
-nnoremap j gj
-nnoremap k gk
-nnoremap 0 g0
-nnoremap $ g$
+"nnoremap j gj
+"nnoremap k gk
+"nnoremap 0 g0
+"nnoremap $ g$
 
 let mapleader=" "
 let maplocalleader = ","
@@ -121,7 +122,13 @@ Plug 'lervag/vimtex'
     let g:vimtex_complete_enabled = 0
     let g:vimtex_syntax_enabled   = 0
     let g:vimtex_view_method = 'zathura'
-
-call plug#end()
+    " quickfix window is opened automatically when there are errors
+    " but it does not become the active window
+    let g:vimtex_quickfix_mode    = 2
+    " quickfix window will close after this number of motions
+    let g:vimtex_quickfix_autoclose_after_keystrokes = 1
+ 
+    
+    call plug#end()
 " -----
 
