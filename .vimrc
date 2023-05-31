@@ -8,7 +8,7 @@ set nowritebackup
 set showcmd
 set showmode
 set autoread
-set scrolloff=10
+set scrolloff=999
 filetype on
 filetype indent on
 filetype plugin on
