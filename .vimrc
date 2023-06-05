@@ -77,6 +77,10 @@ Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
     noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
 Plug 'jiangmiao/auto-pairs'
+    " problem when typing â
+    "References
+    "https://stackoverflow.com/questions/20335393/accents-in-vim-cannot-write-%C3%A2
+    "https://github.com/jiangmiao/auto-pairs/issues/88
     let g:AutoPairsShortcutBackInsert=''
     let g:AutoPairsShortcutJump=''
     let g:AutoPairsMoveCharacter=''

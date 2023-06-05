@@ -7,6 +7,12 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# ls
+alias ls='ls --color=auto'
+alias la='clear;ls -A'
+alias l='clear;ls -1'
+alias ll='ls -al --color=auto | less -R'
+
 # important directories
 alias home='cd ~/'
 alias root='cd /'
@@ -39,12 +45,6 @@ alias readme='touch README.md'
 
 # grep
 alias grep='grep --color=auto'
-
-# ls
-alias ls='ls --color=auto'
-alias la='clear;ls -A'
-alias l='clear;ls -1'
-alias ll='ls -al --color=auto | less -R'
 
 # newsboat
 alias nb='newsboat'
