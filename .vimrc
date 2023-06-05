@@ -2,30 +2,27 @@
 " general
 set encoding=utf-8
 set belloff=all
-set autowrite
+set scrolloff=999
 set nobackup
 set nowritebackup
+set autoread
+set autowrite
 set showcmd
 set showmode
-set autoread
-set scrolloff=999
+
 filetype on
 filetype indent on
 filetype plugin on
 syntax enable
 
+" no wrap
 set textwidth=0
-"set textwidth=80
-"set colorcolumn=80
-"highlight ColorColumn ctermbg=3
 
 " sane editing
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-"set backspace=indent,eol,start
-set viminfo='25,\"50,n~/.viminfo
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -42,18 +39,11 @@ set wildmode=longest,list,full
 set wildignore+=*.pyc
 set wildignore+=**/.git/*
 
-" cursor
-"let &t_SI.="\e[5 q" "SI = INSERT mode
-"let &t_SR.="\e[4 q" "SR = REPLACE mode
-"let &t_EI.="\e[1 q" "EI = NORMAL mode(ELSE)
-
 " make the switch between insert and normal mode faster 
 set ttyfast
 set ttimeout
 set ttimeoutlen=1
 set lazyredraw
-" don't understand it
-"set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 
 " no statusline, ruler instead
 set laststatus=0
@@ -65,15 +55,10 @@ set rulerformat=%40(%=%<%f%m%r\ \
 " Remappings
 " -----
 nnoremap <Esc>u :nohls<CR>
-"nnoremap j gj
-"nnoremap k gk
-"nnoremap 0 g0
-"nnoremap $ g$
 
 let mapleader=" "
 let maplocalleader = ","
 
-" toggling
 map <leader>sn :set number!<CR>
 map <leader>srn :set relativenumber!<CR>
 map <leader>scl :set cursorline!<CR>
@@ -92,6 +77,9 @@ Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
     noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
 Plug 'jiangmiao/auto-pairs'
+    let g:AutoPairsShortcutBackInsert=''
+    let g:AutoPairsShortcutJump=''
+    let g:AutoPairsMoveCharacter=''
 Plug 'tpope/vim-surround'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'sirver/ultisnips'
