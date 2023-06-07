@@ -1,4 +1,3 @@
-
 " general
 set encoding=utf-8
 set belloff=all
@@ -32,6 +31,12 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+" turn on and off 'hlsearch' with autocmd
+"augroup vimrc-incsearch-highlight
+"  autocmd!
+"  autocmd CmdlineEnter /,\? :set hlsearch
+"  autocmd CmdlineLeave /,\? :set nohlsearch
+"augroup END
 
 " tab
 set wildmenu
@@ -54,15 +59,15 @@ set rulerformat=%40(%=%<%f%m%r\ \
 
 " Remappings
 " -----
-nnoremap <Esc>u :nohls<CR>
 
 let mapleader=" "
 let maplocalleader = ","
 
-map <leader>sn :set number!<CR>
-map <leader>srn :set relativenumber!<CR>
-map <leader>scl :set cursorline!<CR>
-map <leader>sp :set paste!<CR>:set paste?<CR>
+nnoremap <Esc>u :nohls<CR>
+nnoremap <leader>sn :set number!<CR>
+nnoremap <leader>srn :set relativenumber!<CR>
+nnoremap <leader>scl :set cursorline!<CR>
+nnoremap <leader>sp :set paste!<CR>:set paste?<CR>
 
 
 " Plugins (with vim-plugins)
@@ -86,6 +91,7 @@ Plug 'jiangmiao/auto-pairs'
     let g:AutoPairsMoveCharacter=''
 Plug 'tpope/vim-surround'
 Plug 'yuttie/comfortable-motion.vim'
+    "Scroll with Ctrl-d and Ctrl-u
 Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger       = '<Tab>'
     let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
