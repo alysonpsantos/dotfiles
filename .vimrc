@@ -9,6 +9,7 @@ set autowrite
 set showcmd
 set showmode
 
+" filetype
 filetype on
 filetype indent on
 filetype plugin on
@@ -27,16 +28,16 @@ autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " search
-set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set hlsearch
 " turn on and off 'hlsearch' with autocmd
-"augroup vimrc-incsearch-highlight
-"  autocmd!
-"  autocmd CmdlineEnter /,\? :set hlsearch
-"  autocmd CmdlineLeave /,\? :set nohlsearch
-"augroup END
+augroup vimrc-incsearch-highlight
+  autocmd!
+  autocmd CmdlineEnter /,\? :set hlsearch
+  autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
 
 " tab
 set wildmenu
