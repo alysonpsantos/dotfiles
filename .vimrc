@@ -83,8 +83,6 @@ Plug 'christoomey/vim-tmux-navigator'
     noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
     noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
 Plug 'jiangmiao/auto-pairs'
-    " problem when typing â
-    "References
     "https://stackoverflow.com/questions/20335393/accents-in-vim-cannot-write-%C3%A2
     "https://github.com/jiangmiao/auto-pairs/issues/88
     let g:AutoPairsShortcutBackInsert=''
@@ -112,7 +110,6 @@ Plug 'preservim/vim-markdown'
     " disable new list indent
     let g:vim_markdown_new_list_item_indent = 0
 
-
 " tex
 Plug 'lervag/vimtex'
     " disable some things
@@ -126,7 +123,6 @@ Plug 'lervag/vimtex'
     let g:vimtex_quickfix_mode    = 2
     " quickfix window will close after this number of motions
     let g:vimtex_quickfix_autoclose_after_keystrokes = 1
- 
     
     call plug#end()
 " -----

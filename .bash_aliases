@@ -1,7 +1,4 @@
 # shortcuts
-alias q='exit'
-alias c='clear'
-alias h='history'
 alias src='source ~/.bashrc'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -10,7 +7,6 @@ alias ....='cd ../../..'
 # ls
 alias ls='ls --color=auto'
 alias la='clear;ls -A'
-alias l='clear;ls -1'
 alias ll='ls -al --color=auto | less -R'
 
 # important directories
