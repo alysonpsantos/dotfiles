@@ -9,7 +9,7 @@ snippet beg "New environment" bA
 \end{$1}
 endsnippet
 
-snippet eq "Equation environment with numbering" bA
+snippet eq "Equation environment with numbering" b
 \begin{equation}
 	$1 \label{eq:$2}
 \end{equation}
@@ -36,19 +36,19 @@ $0
 \begin{itemize}
 endsnippet
 
-snippet enum "Enumerate environment" bA
+snippet enum "Enumerate environment" b
 \begin{enumerate}
 	\item $1
 \end{enumerate}
 endsnippet
 
-snippet des "Description" bA
+snippet des "Description" b
 \begin{description}
 	\item $1
 \end{description}
 endsnippet
 
-snippet case "Cases environment" b
+snippet cases "Cases environment" b
 \begin{cases}
 	$1
 \end{cases}$0
@@ -88,10 +88,13 @@ snippet table "add table" b
 \caption{${1:Description}}
 \label{tab:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
 \centering
-  \begin{tabular}{|c|c|}
+  \begin{tabular}{${3:c|c}}
+	\hline
 	Label1 & Label2 \\
+	\hline
 	Full spectrum & 0.358 \\
 	Narrow band & 0.343 \\
+	\hline
   \end{tabular}
 \end{table}
 endsnippet

@@ -1,5 +1,8 @@
 # shortcuts
 alias src='source ~/.bashrc'
+alias c='clear'
+alias quit='exit'
+alias q='exit'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

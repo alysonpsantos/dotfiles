@@ -27,7 +27,3 @@ bind-key L next-feed
 bind-key g home
 bind-key G end
 
-
-
-
-
