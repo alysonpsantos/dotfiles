@@ -3,7 +3,7 @@
 
 # Various environments
 
-snippet beg "New environment" bA
+snippet beg "New environment" A
 \begin{$1}
 	$0
 \end{$1}
@@ -16,16 +16,10 @@ snippet eq "Equation environment with numbering" b
 $0
 endsnippet
 
-snippet all "Align environment with suppressed numbering" bA
-\begin{align*}
-	$1
-\end{align*}
-$0
-endsnippet
-
 snippet itm "Itemize environment" bA
 \begin{itemize}
-	\item $0
+	\item $1
+	$0
 \end{itemize}
 endsnippet
 
@@ -90,10 +84,10 @@ snippet table "add table" b
 \centering
   \begin{tabular}{${3:c|c}}
 	\hline
-	Label1 & Label2 \\
+	Label1 & Label2 \\\
 	\hline
-	Full spectrum & 0.358 \\
-	Narrow band & 0.343 \\
+	Full spectrum & 0.358 \\\
+	Narrow band & 0.343 \\\
 	\hline
   \end{tabular}
 \end{table}

@@ -38,6 +38,7 @@ snippet "([\w]{1})__" "e.g. expand x__ into x_{1}, x_{2}, x_{3}" rA
 `!p snip.rv = match.group(1) + "_{1}, " + match.group(1) + "_{2}, " + match.group(1) + "_{3}"`
 endsnippet
 
+context "math()"
 snippet "([a-zA-Z]|[\}\)\]\|'])00" "Automatic 0 subscript" rA
 `!p snip.rv = match.group(1)`_{0}
 endsnippet
@@ -142,14 +143,17 @@ snippet >> "\implies" Ai
 \implies 
 endsnippet
 
+context "math()"
 snippet lra "\leftrightarrow" A
 \leftrightarrow 
 endsnippet
 
+context "math()"
 snippet ,. "\cdot" iA
 \cdot 
 endsnippet
 
+context "math()"
 snippet xx "\cross" A
 \times 
 endsnippet
