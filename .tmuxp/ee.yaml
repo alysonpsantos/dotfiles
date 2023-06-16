@@ -28,16 +28,15 @@ windows:
   - shell_command:
     - cd ~/tests;clear
 
-- window_name: tcc 
+- window_name: bib 
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;gs
-    start_directory: "~/ee-tcc"
-  
-- window_name: cv 
+    shell_command: clear
+    
+- window_name: other
   options: {}
   panes:
   - focus: 'true'
-    shell_command: clear;gs
-    start_directory: "~/curriculum"
+    shell_command: clear
+    start_directory: "~"
