@@ -32,12 +32,6 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-" turn on and off 'hlsearch' with autocmd
-augroup vimrc-incsearch-highlight
-  autocmd!
-  autocmd CmdlineEnter /,\? :set hlsearch
-  autocmd CmdlineLeave /,\? :set nohlsearch
-augroup END
 
 " tab
 set wildmenu
@@ -58,6 +52,7 @@ set rulerformat=%40(%=%<%f%m%r\ \
                       \ \ \
                       \ \ %l,%c\ \ %P%)
 
+
 " Remappings
 " -----
 
@@ -69,6 +64,7 @@ nnoremap <leader>sn :set number!<CR>
 nnoremap <leader>srn :set relativenumber!<CR>
 nnoremap <leader>scl :set cursorline!<CR>
 nnoremap <leader>sp :set paste!<CR>:set paste?<CR>
+
 
 
 " Plugins (with vim-plugins)
