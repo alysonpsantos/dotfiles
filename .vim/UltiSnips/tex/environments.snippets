@@ -70,20 +70,22 @@ endsnippet
 snippet fig "figure and label" b
 \begin{figure}[ht!]
   \centering
-  \includegraphics[angle=0,width=1.0\textwidth]{${1:Filename}}
-  \caption{$0}
-  \label{fig:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
+  \includegraphics[width=1.0\textwidth]{${1:Filename}}
+  \caption[$3]{$3$4}
+  \label{fig:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\l$1$2$3)/g}}}
 \end{figure}
+$0
 endsnippet
 
 # ckunte. modified
 snippet table "add table" b
 \begin{table}[ht!]
-\caption{${1:Description}}
-\label{tab:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
+\caption[$1]{$1 $2}
+\label{tab:${3:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\l$1$2$3)/g}}}
 \centering
-  \begin{tabular}{${3:c|c}}
+  \begin{tabular}{${4:c|c}}
 	\hline
+	$0
 	Label1 & Label2 \\\
 	\hline
 	Full spectrum & 0.358 \\\
@@ -93,10 +95,3 @@ snippet table "add table" b
 \end{table}
 endsnippet
 
-# ckunte
-snippet toc "Table of contents, tables and figures" b
-\tableofcontents
-\listoffigures
-\listoftables
-\pagebreak
-endsnippet

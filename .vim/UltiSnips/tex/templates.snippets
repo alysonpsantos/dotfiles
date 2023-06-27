@@ -15,76 +15,73 @@ snippet bib "Bibliography packages and options" b
     hyperref=true,
     backref=true,
 ]{biblatex}
-\addbibresource[glob]{./bibfiles/*.bib}
+\addbibresource{./bibfiles/*.bib}
 endsnippet
 
 # ---------------------------------------------
 
-snippet lecture "Lecture note" b
-\documentclass{article}
+snippet packages "include commom packages" b
+% packages and options
 
-\input{preamble}
-
-\def\theme{${1: Tema da aula}}
-\def\date{${2: Data da aula}}
-
-\begin{document}
-	$0
-\end{document}
-endsnippet
-
-# ---------------------------------------------
-
-snippet lab "Lab report" b
-\documentclass{article}
-
-%packages
-\input{preamble}
-
-\title{$1}
-\author{$2}
-\date{$3}
-
-\begin{document}
-
-\maketitle
-	
-	\section{Objetivos}
-
-	\begin{itemize}
-		\item ${4:Objetivo}
-		$5
-	\end{itemize}
-
-	\section{Fundamentação Teórica}
-	\section{Procedimento Prático}
-
-		$0
-
-	\section{Resultados}
-	\section{Questionário}
-
-	\begin{enumerate}
-		\item 1
-	\end{enumerate}
-
-	%\printbibliography
-
-\end{document}
-endsnippet
-
-# ---------------------------------------------
-
-snippet packages "include packages, except bibliography related" b
-% packages
+% general
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
-\usepackage[]{graphicx}
-\graphicspath{ {./images/}}
+
+% images
+\usepackage{graphicx}
+    \graphicspath{ {./images/} }
+
+% math
 \usepackage{amsmath}
 \usepackage{amssymb}
+
+% tikz and circuitikz
 \usepackage{tikz}
-\usepackage[american, cute inductors, RPvoltages]{circuitikz}
+    \usetikzlibrary {arrows.meta,trees}
+\usepackage[american, cute inductors]{circuitikz}
+
+% brazilian style
+\usepackage{indentfirst}
+
+% toc 
+% Include lot and lof in ToC
+\usepackage[nottoc]{tocbibind}
+% Include \subsubsection in ToC
+%\setcounter{tocdepth}{3}
+% Include \subsubsection number
+%\setcounter{secnumdepth}{3}
+
+% tables
+\usepackage{multirow}
+\usepackage{longtable}
+
+% abreviaturas
+\usepackage[intoc, portuguese]{nomencl}
+\makenomenclature
+% Título
+\renewcommand{\nomname}{Lista de abreviaturas}
+% Preâmbulo
+\renewcommand{\nompreamble}{A lista a seguir descreve as abreviaturas utilizadas ao longo do documento}
+	% don't forget
+    % this command is necessary
+    %makeindex <filename>.nlo -s nomencl.ist -o <filename>.nls
+
+% hyperref
+\usepackage{hyperref}
+    \hypersetup{
+        colorlinks=false,
+        pdfborder={0 0 0},
+        pdftitle={Projeto de Instalação Elétrica Predial - Edifício Lilac},
+    }   
 \usepackage[shortlabels]{enumitem}
+
+% bibliography
+\usepackage{csquotes}
+\usepackage[
+    backend=biber,
+    hyperref=true,
+    backref=true,
+]{biblatex}
+\addbibresource{./bibfiles/*.bib}
 endsnippet
 
